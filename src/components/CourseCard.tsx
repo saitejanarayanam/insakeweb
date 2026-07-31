@@ -13,18 +13,27 @@ export type CourseCardData = {
   category?: { name: string; slug: string } | null;
 };
 
-const BADGE_GRADIENTS = [
-  "from-(--color-primary) to-fuchsia-500",
-  "from-sky-500 to-cyan-600",
-  "from-fuchsia-500 to-pink-600",
-  "from-amber-500 to-orange-600",
-  "from-emerald-500 to-teal-600",
-];
+const CATEGORY_GRADIENTS: Record<string, string> = {
+  "it-audit": "from-violet-500 to-purple-700",
+  "project-management": "from-blue-500 to-indigo-600",
+  "security-management": "from-(--color-primary) to-fuchsia-600",
+  "risk-management": "from-amber-500 to-orange-600",
+  "fraud-examination": "from-rose-500 to-red-600",
+  "ai-project-management": "from-fuchsia-500 to-violet-600",
+  finance: "from-emerald-500 to-teal-600",
+  "data-business": "from-orange-500 to-amber-600",
+  "career-readiness": "from-teal-500 to-cyan-600",
+  "soft-skills": "from-sky-500 to-blue-600",
+  "data-analytics": "from-pink-500 to-fuchsia-600",
+};
 
-function badgeGradient(seed: string) {
+const FALLBACK_GRADIENTS = Object.values(CATEGORY_GRADIENTS);
+
+function badgeGradient(slug: string | undefined | null, seed: string) {
+  if (slug && CATEGORY_GRADIENTS[slug]) return CATEGORY_GRADIENTS[slug];
   let hash = 0;
   for (let i = 0; i < seed.length; i++) hash = (hash * 31 + seed.charCodeAt(i)) >>> 0;
-  return BADGE_GRADIENTS[hash % BADGE_GRADIENTS.length];
+  return FALLBACK_GRADIENTS[hash % FALLBACK_GRADIENTS.length];
 }
 
 export function CourseCard({ course }: { course: CourseCardData }) {
@@ -36,7 +45,8 @@ export function CourseCard({ course }: { course: CourseCardData }) {
       <div className="flex items-start justify-between gap-2">
         <span
           className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br text-white ${badgeGradient(
-            course.category?.slug ?? course.slug
+            course.category?.slug,
+            course.slug
           )}`}
         >
           <CategoryIcon slug={course.category?.slug} />
