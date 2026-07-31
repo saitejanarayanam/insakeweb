@@ -3,6 +3,7 @@ import { prisma } from "@/lib/prisma";
 import { CourseCard } from "@/components/CourseCard";
 import { HeroIllustration } from "@/components/HeroIllustration";
 import { TrustBadges } from "@/components/TrustBadges";
+import { PersonIcon } from "@/components/icons/PersonIcon";
 
 export default async function HomePage() {
   const [featuredCourses, partners, mentors, testimonials] = await Promise.all([
@@ -60,9 +61,9 @@ export default async function HomePage() {
                 {mentors.slice(0, 4).map((m) => (
                   <div
                     key={m.id}
-                    className="flex h-8 w-8 items-center justify-center rounded-full border-2 border-(--color-ink) bg-gradient-to-br from-(--color-primary) to-fuchsia-500 text-xs font-semibold text-white"
+                    className="flex h-8 w-8 items-center justify-center rounded-full border-2 border-(--color-ink) bg-gradient-to-br from-(--color-primary) to-fuchsia-500 text-white"
                   >
-                    {m.name.charAt(0)}
+                    <PersonIcon className="h-4 w-4" />
                   </div>
                 ))}
               </div>
@@ -121,8 +122,8 @@ export default async function HomePage() {
             <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
               {mentors.map((m) => (
                 <div key={m.id} className="rounded-2xl border border-(--color-border) bg-(--background) p-5">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-(--color-primary) to-fuchsia-500 text-lg font-semibold text-white">
-                    {m.name.charAt(0)}
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-(--color-primary) to-fuchsia-500 text-white">
+                    <PersonIcon className="h-6 w-6" />
                   </div>
                   <h3 className="mt-3 text-sm font-semibold">{m.name}</h3>
                   <p className="text-xs text-(--color-muted)">

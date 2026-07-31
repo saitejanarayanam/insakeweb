@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { prisma } from "@/lib/prisma";
 import { PageHero } from "@/components/PageHero";
 import { StatsRow } from "@/components/StatsRow";
+import { PersonIcon } from "@/components/icons/PersonIcon";
 
 export const metadata: Metadata = {
   title: "About",
@@ -128,8 +129,8 @@ export default async function AboutPage() {
             <div className="mt-4 grid gap-4 sm:grid-cols-2">
               {mentors.map((m) => (
                 <div key={m.id} className="rounded-2xl border border-(--color-border) p-5">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-(--color-primary) to-fuchsia-500 text-sm font-semibold text-white">
-                    {m.name.charAt(0)}
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-br from-(--color-primary) to-fuchsia-500 text-white">
+                    <PersonIcon className="h-5 w-5" />
                   </div>
                   <h3 className="mt-3 text-sm font-semibold">{m.name}</h3>
                   <p className="text-xs text-(--color-muted)">
