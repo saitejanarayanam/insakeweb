@@ -10,12 +10,12 @@
   --color-border: #e6e3f1;
   --color-surface: #f6f4fc;
 
-  /* dark "hero band" tokens, used on both light and dark mode */
-  --color-ink: #0b0714;
-  --color-ink-surface: #150f28;
-  --color-ink-border: #2a2148;
-  --color-ink-foreground: #f4f2fb;
-  --color-ink-muted: #a8a2c4;
+  /* subtle tinted "band" tokens, used to set hero/footer sections apart from the page */
+  --color-ink: #f5f2fc;
+  --color-ink-surface: #ffffff;
+  --color-ink-border: #e6e3f1;
+  --color-ink-foreground: #17152a;
+  --color-ink-muted: #6b6b83;
 }
 
 @theme inline {
@@ -34,16 +34,6 @@
   --color-ink-muted: var(--color-ink-muted);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0b0714;
-    --foreground: #f4f2fb;
-    --color-surface: #150f28;
-    --color-border: #2a2148;
-    --color-muted: #a8a2c4;
-  }
 }
 
 body {

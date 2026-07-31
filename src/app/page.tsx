@@ -19,8 +19,8 @@ export default async function HomePage() {
 
   return (
     <div>
-      <section className="bg-grid relative overflow-hidden bg-(--color-ink) text-(--color-ink-foreground)">
-        <div className="pointer-events-none absolute -top-24 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-(--color-primary)/30 blur-3xl" />
+      <section className="bg-grid relative overflow-hidden border-b border-(--color-ink-border) bg-(--color-ink) text-(--color-ink-foreground)">
+        <div className="pointer-events-none absolute -top-24 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-(--color-primary)/20 blur-3xl" />
         <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-4 py-20 lg:grid-cols-2 lg:py-28">
           <div className="text-center lg:text-left">
             <span className="inline-flex items-center gap-2 rounded-full border border-(--color-ink-border) bg-(--color-ink-surface) px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-(--color-primary)">
@@ -154,7 +154,7 @@ export default async function HomePage() {
         </section>
       )}
 
-      <section className="bg-grid relative overflow-hidden bg-(--color-ink) py-16 text-(--color-ink-foreground)">
+      <section className="bg-grid relative overflow-hidden border-y border-(--color-ink-border) bg-(--color-ink) py-16 text-(--color-ink-foreground)">
         <div className="relative mx-auto max-w-6xl px-4 text-center">
           <h2 className="text-2xl font-bold">Ready to get started?</h2>
           <p className="mt-2 text-(--color-ink-muted)">

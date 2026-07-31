@@ -3,7 +3,7 @@ export function HeroIllustration() {
     <div className="relative mx-auto w-full max-w-sm">
       <div className="pointer-events-none absolute inset-0 rounded-3xl bg-(--color-primary)/20 blur-2xl" />
 
-      <div className="relative rounded-3xl border border-(--color-ink-border) bg-(--color-ink-surface) p-6 shadow-2xl shadow-black/40">
+      <div className="relative rounded-3xl border border-(--color-ink-border) bg-(--color-ink-surface) p-6 shadow-xl shadow-(--color-primary)/10">
         <div className="flex items-center justify-between">
           <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-(--color-primary) to-fuchsia-500 text-white">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -11,7 +11,7 @@ export function HeroIllustration() {
               <path d="M3 12l9 5 9-5M3 17l9 5 9-5" />
             </svg>
           </div>
-          <span className="rounded-full bg-green-500/15 px-2.5 py-1 text-xs font-semibold text-green-400">
+          <span className="rounded-full bg-green-500/15 px-2.5 py-1 text-xs font-semibold text-green-600">
             Certified
           </span>
         </div>

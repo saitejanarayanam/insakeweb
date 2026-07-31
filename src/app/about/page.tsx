@@ -144,7 +144,7 @@ export default async function AboutPage() {
         )}
       </div>
 
-      <section className="bg-grid bg-(--color-ink) py-14 text-(--color-ink-foreground)">
+      <section className="bg-grid border-y border-(--color-ink-border) bg-(--color-ink) py-14 text-(--color-ink-foreground)">
         <div className="mx-auto max-w-5xl px-4">
           <div className="text-center">
             <span className="text-xs font-semibold uppercase tracking-wide text-(--color-primary)">
@@ -164,7 +164,7 @@ export default async function AboutPage() {
               <ul className="mt-4 space-y-3">
                 {ACHIEVEMENTS.map((a) => (
                   <li key={a} className="flex gap-2 text-sm text-(--color-ink-muted)">
-                    <span className="text-green-400">✓</span>
+                    <span className="text-green-600">✓</span>
                     {a}
                   </li>
                 ))}

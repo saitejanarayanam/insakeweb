@@ -69,7 +69,7 @@ export default function ContactPage() {
           ))}
         </div>
 
-        <div className="mt-12 rounded-2xl bg-(--color-ink) p-8 text-center text-(--color-ink-foreground)">
+        <div className="mt-12 rounded-2xl border border-(--color-ink-border) bg-(--color-ink) p-8 text-center text-(--color-ink-foreground)">
           <a
             href="https://wa.me/919989569893"
             target="_blank"
