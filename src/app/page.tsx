@@ -4,6 +4,7 @@ import { CourseCard } from "@/components/CourseCard";
 import { HeroIllustration } from "@/components/HeroIllustration";
 import { TrustBadges } from "@/components/TrustBadges";
 import { PersonIcon } from "@/components/icons/PersonIcon";
+import { ScrollCarousel } from "@/components/ScrollCarousel";
 
 export default async function HomePage() {
   const [featuredCourses, partners, mentors, testimonials] = await Promise.all([
@@ -90,12 +91,18 @@ export default async function HomePage() {
             <p className="text-center text-xs font-semibold uppercase tracking-wide text-(--color-muted)">
               Trusted by learners from
             </p>
-            <div className="mt-6 flex flex-wrap items-center justify-center gap-x-10 gap-y-4">
-              {partners.map((p) => (
-                <span key={p.id} className="text-sm font-medium text-(--color-muted)">
-                  {p.name}
-                </span>
-              ))}
+            <div className="mt-6">
+              <ScrollCarousel>
+                {partners.map((p) => (
+                  <span
+                    key={p.id}
+                    data-slide
+                    className="flex shrink-0 snap-start items-center justify-center rounded-full border border-(--color-border) bg-(--color-surface) px-6 py-2.5 text-sm font-medium text-(--color-muted)"
+                  >
+                    {p.name}
+                  </span>
+                ))}
+              </ScrollCarousel>
             </div>
           </div>
         </section>
@@ -108,20 +115,26 @@ export default async function HomePage() {
             View all →
           </Link>
         </div>
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        <ScrollCarousel>
           {featuredCourses.map((course) => (
-            <CourseCard key={course.id} course={course} />
+            <div key={course.id} data-slide className="w-[270px] shrink-0 snap-start sm:w-[300px]">
+              <CourseCard course={course} />
+            </div>
           ))}
-        </div>
+        </ScrollCarousel>
       </section>
 
       {mentors.length > 0 && (
         <section className="border-t border-(--color-border) bg-(--color-surface) py-16">
           <div className="mx-auto max-w-6xl px-4">
             <h2 className="mb-8 text-2xl font-bold">Learn from industry mentors</h2>
-            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            <ScrollCarousel>
               {mentors.map((m) => (
-                <div key={m.id} className="rounded-2xl border border-(--color-border) bg-(--background) p-5">
+                <div
+                  key={m.id}
+                  data-slide
+                  className="w-[230px] shrink-0 snap-start rounded-2xl border border-(--color-border) bg-(--background) p-5 sm:w-[260px]"
+                >
                   <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-(--color-primary) to-fuchsia-500 text-white">
                     <PersonIcon className="h-6 w-6" />
                   </div>
@@ -133,7 +146,7 @@ export default async function HomePage() {
                   <p className="mt-2 text-xs text-(--color-muted)">{m.bio}</p>
                 </div>
               ))}
-            </div>
+            </ScrollCarousel>
           </div>
         </section>
       )}
@@ -141,9 +154,13 @@ export default async function HomePage() {
       {testimonials.length > 0 && (
         <section className="mx-auto max-w-6xl px-4 py-16">
           <h2 className="mb-8 text-2xl font-bold">What learners say</h2>
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <ScrollCarousel>
             {testimonials.map((t) => (
-              <figure key={t.id} className="rounded-2xl border border-(--color-border) p-5">
+              <figure
+                key={t.id}
+                data-slide
+                className="w-[280px] shrink-0 snap-start rounded-2xl border border-(--color-border) p-5 sm:w-[340px]"
+              >
                 <blockquote className="text-sm text-(--foreground)">&ldquo;{t.quote}&rdquo;</blockquote>
                 <figcaption className="mt-3 text-xs text-(--color-muted)">
                   <span className="font-semibold text-(--foreground)">{t.name}</span>
@@ -151,7 +168,7 @@ export default async function HomePage() {
                 </figcaption>
               </figure>
             ))}
-          </div>
+          </ScrollCarousel>
         </section>
       )}
 
