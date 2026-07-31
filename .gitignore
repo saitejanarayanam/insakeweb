@@ -46,6 +46,9 @@ next-env.d.ts
 *.db
 *.db-journal
 
+# supabase CLI local link cache
+/supabase/.temp/
+
 # AI agent skill docs (installed by `prisma init`, not app code)
 /.agents/
 /.windsurf/
