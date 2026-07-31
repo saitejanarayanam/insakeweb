@@ -16,13 +16,29 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(BASE_URL),
   title: {
     default: "inSAKE — Certify, Upskill, Grow",
     template: "%s | inSAKE",
   },
   description:
     "inSAKE offers expert-led certification courses, finance & analytics training, and career-skills programs to help you build real-world, job-ready skills.",
+  openGraph: {
+    title: "inSAKE — Certify, Upskill, Grow",
+    description:
+      "inSAKE offers expert-led certification courses, finance & analytics training, and career-skills programs to help you build real-world, job-ready skills.",
+    siteName: "inSAKE Academy",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "inSAKE — Certify, Upskill, Grow",
+    description:
+      "inSAKE offers expert-led certification courses, finance & analytics training, and career-skills programs to help you build real-world, job-ready skills.",
+  },
 };
 
 export default function RootLayout({

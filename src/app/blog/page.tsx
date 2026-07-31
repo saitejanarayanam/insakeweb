@@ -34,7 +34,7 @@ export default async function BlogPage({
         description="Expert articles on cybersecurity, certifications, finance, and career growth."
       />
 
-      <div className="mx-auto max-w-4xl px-4 py-12">
+      <div className="mx-auto max-w-6xl px-4 py-12">
         <div className="flex flex-wrap gap-2">
           <Link
             href="/blog"
@@ -61,12 +61,12 @@ export default async function BlogPage({
           ))}
         </div>
 
-        <div className="mt-8 space-y-6">
+        <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {posts.map((post) => (
             <Link
               key={post.id}
               href={`/blog/${post.slug}`}
-              className="block rounded-2xl border border-(--color-border) p-5 transition hover:border-(--color-primary) hover:shadow-lg hover:shadow-(--color-primary)/10"
+              className="flex flex-col rounded-2xl border border-(--color-border) p-5 transition hover:border-(--color-primary) hover:shadow-lg hover:shadow-(--color-primary)/10"
             >
               <div className="flex flex-wrap items-center gap-2 text-xs text-(--color-muted)">
                 {post.category && (
@@ -89,7 +89,7 @@ export default async function BlogPage({
             </Link>
           ))}
           {posts.length === 0 && (
-            <p className="text-center text-(--color-muted)">No articles published yet.</p>
+            <p className="col-span-full text-center text-(--color-muted)">No articles published yet.</p>
           )}
         </div>
       </div>
