@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#064e3b"/>
+      <stop offset="100%" style="stop-color:#059669"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+  </pattern>
+  <rect width="800" height="450" fill="url(#grid)"/>
+  
+  <!-- Stock chart main -->
+  <rect x="60" y="100" width="380" height="260" rx="12" fill="rgba(0,0,0,0.35)" stroke="rgba(52,211,153,0.3)" stroke-width="1"/>
+  <!-- Chart axes -->
+  <line x1="100" y1="150" x2="100" y2="320" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+  <line x1="100" y1="320" x2="420" y2="320" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+  <!-- Stock line up trend -->
+  <polyline points="110,290 150,270 185,280 220,240 260,220 300,200 340,175 380,155 415,130" fill="none" stroke="#34d399" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Area fill under line -->
+  <polygon points="110,290 150,270 185,280 220,240 260,220 300,200 340,175 380,155 415,130 415,320 110,320" fill="rgba(52,211,153,0.12)"/>
+  <!-- Candlesticks -->
+  <rect x="115" y="270" width="8" height="28" rx="1" fill="#34d399"/>
+  <rect x="135" y="255" width="8" height="24" rx="1" fill="#f87171"/>
+  <rect x="155" y="262" width="8" height="20" rx="1" fill="#34d399"/>
+  <rect x="175" y="270" width="8" height="18" rx="1" fill="#f87171"/>
+  <rect x="195" y="235" width="8" height="22" rx="1" fill="#34d399"/>
+  <rect x="215" y="225" width="8" height="20" rx="1" fill="#34d399"/>
+  <!-- Y axis labels -->
+  <text x="92" y="155" text-anchor="end" font-family="monospace" font-size="9" fill="rgba(255,255,255,0.4)">500</text>
+  <text x="92" y="200" text-anchor="end" font-family="monospace" font-size="9" fill="rgba(255,255,255,0.4)">400</text>
+  <text x="92" y="245" text-anchor="end" font-family="monospace" font-size="9" fill="rgba(255,255,255,0.4)">300</text>
+  <text x="92" y="290" text-anchor="end" font-family="monospace" font-size="9" fill="rgba(255,255,255,0.4)">200</text>
+  <!-- Grid lines -->
+  <line x1="100" y1="200" x2="420" y2="200" stroke="rgba(255,255,255,0.07)" stroke-width="1" stroke-dasharray="4 4"/>
+  <line x1="100" y1="245" x2="420" y2="245" stroke="rgba(255,255,255,0.07)" stroke-width="1" stroke-dasharray="4 4"/>
+  <!-- Chart title -->
+  <text x="80" y="128" font-family="system-ui" font-size="11" font-weight="600" fill="rgba(255,255,255,0.7)">Equity Chart</text>
+  <text x="360" y="128" text-anchor="end" font-family="monospace" font-size="11" fill="#34d399">+18.4%</text>
+  
+  <!-- Research report panel -->
+  <rect x="480" y="100" width="270" height="260" rx="12" fill="rgba(0,0,0,0.35)" stroke="rgba(52,211,153,0.3)" stroke-width="1"/>
+  <text x="495" y="128" font-family="system-ui" font-size="11" font-weight="600" fill="rgba(255,255,255,0.7)">Research Report</text>
+  <!-- Report lines -->
+  <rect x="495" y="140" width="180" height="8" rx="3" fill="rgba(255,255,255,0.3)"/>
+  <rect x="495" y="155" width="230" height="5" rx="2" fill="rgba(255,255,255,0.12)"/>
+  <rect x="495" y="166" width="210" height="5" rx="2" fill="rgba(255,255,255,0.12)"/>
+  <rect x="495" y="177" width="220" height="5" rx="2" fill="rgba(255,255,255,0.12)"/>
+  <!-- Mini bar chart -->
+  <rect x="495" y="200" width="20" height="50" rx="2" fill="#34d399"/>
+  <rect x="522" y="215" width="20" height="35" rx="2" fill="#f87171"/>
+  <rect x="549" y="205" width="20" height="45" rx="2" fill="#34d399"/>
+  <rect x="576" y="195" width="20" height="55" rx="2" fill="#34d399"/>
+  <rect x="603" y="210" width="20" height="40" rx="2" fill="#f87171"/>
+  <rect x="630" y="200" width="20" height="50" rx="2" fill="#34d399"/>
+  <line x1="495" y1="255" x2="655" y2="255" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+  <!-- Buy/Sell -->
+  <rect x="495" y="268" width="70" height="26" rx="13" fill="#059669"/>
+  <text x="530" y="285" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="600" fill="white">BUY ↑</text>
+  <rect x="578" y="268" width="70" height="26" rx="13" fill="rgba(239,68,68,0.7)"/>
+  <text x="613" y="285" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="600" fill="white">SELL ↓</text>
+  <!-- Stats -->
+  <text x="495" y="322" font-family="monospace" font-size="9" fill="rgba(255,255,255,0.4)">P/E: 18.4   EV/EBITDA: 12.1   ROE: 24%</text>
+  
+  <ellipse cx="400" cy="440" rx="320" ry="25" fill="rgba(52,211,153,0.12)"/>
+</svg>

@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="100%" style="stop-color:#0284c7"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+  </pattern>
+  <rect width="800" height="450" fill="url(#grid)"/>
+  
+  <!-- SQL Query window -->
+  <rect x="40" y="70" width="420" height="310" rx="12" fill="#0d1117" stroke="rgba(56,189,248,0.3)" stroke-width="1"/>
+  <rect x="40" y="70" width="420" height="32" rx="12" fill="#161b22"/>
+  <rect x="40" y="88" width="420" height="14" fill="#161b22"/>
+  <circle cx="62" cy="86" r="6" fill="#ff5f57"/>
+  <circle cx="80" cy="86" r="6" fill="#ffbd2e"/>
+  <circle cx="98" cy="86" r="6" fill="#28ca42"/>
+  <text x="242" y="90" text-anchor="middle" font-family="monospace" font-size="9" fill="rgba(255,255,255,0.4)">query.sql</text>
+  
+  <!-- SQL code -->
+  <text x="58" y="124" font-family="monospace" font-size="10" fill="#ff7b72">SELECT</text>
+  <text x="58" y="141" font-family="monospace" font-size="10" fill="#e6edf3">  c.customer_name,</text>
+  <text x="58" y="158" font-family="monospace" font-size="10" fill="#e6edf3">  r.region_name,</text>
+  <text x="58" y="175" font-family="monospace" font-size="10" fill="#79c0ff">  SUM</text>
+  <text x="98" y="175" font-family="monospace" font-size="10" fill="#e6edf3">(o.amount)</text>
+  <text x="193" y="175" font-family="monospace" font-size="10" fill="#ff7b72">AS</text>
+  <text x="215" y="175" font-family="monospace" font-size="10" fill="#e6edf3">total_revenue,</text>
+  <text x="58" y="192" font-family="monospace" font-size="10" fill="#79c0ff">  COUNT</text>
+  <text x="115" y="192" font-family="monospace" font-size="10" fill="#e6edf3">(o.id)</text>
+  <text x="165" y="192" font-family="monospace" font-size="10" fill="#ff7b72">AS</text>
+  <text x="188" y="192" font-family="monospace" font-size="10" fill="#e6edf3">order_count</text>
+  <text x="58" y="209" font-family="monospace" font-size="10" fill="#ff7b72">FROM</text>
+  <text x="97" y="209" font-family="monospace" font-size="10" fill="#e6edf3">customers c</text>
+  <text x="58" y="226" font-family="monospace" font-size="10" fill="#ff7b72">  JOIN</text>
+  <text x="100" y="226" font-family="monospace" font-size="10" fill="#e6edf3">orders o</text>
+  <text x="168" y="226" font-family="monospace" font-size="10" fill="#ff7b72">ON</text>
+  <text x="190" y="226" font-family="monospace" font-size="10" fill="#e6edf3">c.id = o.customer_id</text>
+  <text x="58" y="243" font-family="monospace" font-size="10" fill="#ff7b72">  JOIN</text>
+  <text x="100" y="243" font-family="monospace" font-size="10" fill="#e6edf3">regions r</text>
+  <text x="168" y="243" font-family="monospace" font-size="10" fill="#ff7b72">ON</text>
+  <text x="190" y="243" font-family="monospace" font-size="10" fill="#e6edf3">c.region_id = r.id</text>
+  <text x="58" y="260" font-family="monospace" font-size="10" fill="#ff7b72">WHERE</text>
+  <text x="108" y="260" font-family="monospace" font-size="10" fill="#e6edf3">o.created_at &gt;= </text>
+  <text x="250" y="260" font-family="monospace" font-size="10" fill="#a5d6ff">'2024-01-01'</text>
+  <text x="58" y="277" font-family="monospace" font-size="10" fill="#ff7b72">GROUP BY</text>
+  <text x="124" y="277" font-family="monospace" font-size="10" fill="#e6edf3">c.id, r.id</text>
+  <text x="58" y="294" font-family="monospace" font-size="10" fill="#ff7b72">ORDER BY</text>
+  <text x="124" y="294" font-family="monospace" font-size="10" fill="#e6edf3">total_revenue</text>
+  <text x="247" y="294" font-family="monospace" font-size="10" fill="#ff7b72">DESC</text>
+  <text x="58" y="311" font-family="monospace" font-size="10" fill="#ff7b72">LIMIT</text>
+  <text x="100" y="311" font-family="monospace" font-size="10" fill="#a5d6ff">100</text>
+  <text x="125" y="311" font-family="monospace" font-size="10" fill="#e6edf3">;</text>
+  
+  <!-- Results window -->
+  <rect x="475" y="70" width="285" height="155" rx="12" fill="rgba(0,0,0,0.45)" stroke="rgba(56,189,248,0.3)" stroke-width="1"/>
+  <rect x="475" y="70" width="285" height="26" rx="12" fill="rgba(2,132,199,0.3)"/>
+  <rect x="475" y="82" width="285" height="14" fill="rgba(2,132,199,0.3)"/>
+  <text x="618" y="87" text-anchor="middle" font-family="system-ui" font-size="9" fill="rgba(255,255,255,0.6)">Results — 100 rows</text>
+  <!-- Table header -->
+  <rect x="475" y="96" width="285" height="18" fill="rgba(2,132,199,0.2)"/>
+  <text x="488" y="109" font-family="monospace" font-size="7" fill="rgba(255,255,255,0.6)">customer_name  region   revenue   orders</text>
+  <!-- Data rows -->
+  <text x="488" y="126" font-family="monospace" font-size="7" fill="rgba(255,255,255,0.7)">Rahul Sharma   North    ₹84,200   42</text>
+  <text x="488" y="140" font-family="monospace" font-size="7" fill="rgba(255,255,255,0.7)">Priya Nair     South    ₹72,400   38</text>
+  <text x="488" y="154" font-family="monospace" font-size="7" fill="rgba(255,255,255,0.7)">Arjun Singh    East     ₹68,100   31</text>
+  <text x="488" y="168" font-family="monospace" font-size="7" fill="rgba(255,255,255,0.7)">Kavya Reddy    West     ₹61,800   28</text>
+  <text x="488" y="182" font-family="monospace" font-size="7" fill="rgba(255,255,255,0.7)">Rohan Kumar    North    ₹59,200   25</text>
+  <text x="488" y="196" font-family="monospace" font-size="7" fill="rgba(56,189,248,0.6)">Executed in 124ms — Index scan on customer_id</text>
+  
+  <!-- ERD diagram -->
+  <rect x="475" y="235" width="285" height="145" rx="12" fill="rgba(0,0,0,0.45)" stroke="rgba(56,189,248,0.3)" stroke-width="1"/>
+  <text x="490" y="258" font-family="system-ui" font-size="9" fill="rgba(255,255,255,0.5)">Entity Relationship</text>
+  <!-- Tables -->
+  <rect x="487" y="265" width="75" height="100" rx="4" fill="rgba(2,132,199,0.2)" stroke="rgba(56,189,248,0.4)" stroke-width="1"/>
+  <rect x="487" y="265" width="75" height="16" rx="4" fill="rgba(2,132,199,0.4)"/>
+  <text x="524" y="277" text-anchor="middle" font-family="monospace" font-size="7" fill="white">customers</text>
+  <text x="492" y="292" font-family="monospace" font-size="6" fill="rgba(255,255,255,0.6)">🔑 id</text>
+  <text x="492" y="305" font-family="monospace" font-size="6" fill="rgba(255,255,255,0.5)">name</text>
+  <text x="492" y="318" font-family="monospace" font-size="6" fill="rgba(255,255,255,0.5)">region_id</text>
+  <text x="492" y="331" font-family="monospace" font-size="6" fill="rgba(255,255,255,0.5)">email</text>
+  
+  <rect x="605" y="265" width="70" height="100" rx="4" fill="rgba(2,132,199,0.2)" stroke="rgba(56,189,248,0.4)" stroke-width="1"/>
+  <rect x="605" y="265" width="70" height="16" rx="4" fill="rgba(2,132,199,0.4)"/>
+  <text x="640" y="277" text-anchor="middle" font-family="monospace" font-size="7" fill="white">orders</text>
+  <text x="610" y="292" font-family="monospace" font-size="6" fill="rgba(255,255,255,0.6)">🔑 id</text>
+  <text x="610" y="305" font-family="monospace" font-size="6" fill="rgba(255,255,255,0.5)">customer_id</text>
+  <text x="610" y="318" font-family="monospace" font-size="6" fill="rgba(255,255,255,0.5)">amount</text>
+  <text x="610" y="331" font-family="monospace" font-size="6" fill="rgba(255,255,255,0.5)">created_at</text>
+  
+  <!-- Relationship line -->
+  <line x1="562" y1="315" x2="605" y2="315" stroke="rgba(56,189,248,0.5)" stroke-width="1.5"/>
+  <circle cx="562" cy="315" r="3" fill="#38bdf8"/>
+  <circle cx="605" cy="315" r="3" fill="#38bdf8"/>
+  
+  <ellipse cx="400" cy="440" rx="320" ry="25" fill="rgba(2,132,199,0.12)"/>
+</svg>

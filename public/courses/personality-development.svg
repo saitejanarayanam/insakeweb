@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e1b4b"/>
+      <stop offset="100%" style="stop-color:#7c3aed"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <pattern id="dots" width="25" height="25" patternUnits="userSpaceOnUse">
+    <circle cx="12" cy="12" r="1" fill="rgba(255,255,255,0.05)"/>
+  </pattern>
+  <rect width="800" height="450" fill="url(#dots)"/>
+  
+  <!-- Mirror frame -->
+  <ellipse cx="250" cy="210" rx="100" ry="130" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="8"/>
+  <ellipse cx="250" cy="210" rx="92" ry="122" fill="rgba(255,255,255,0.05)" stroke="rgba(196,181,253,0.4)" stroke-width="2"/>
+  <!-- Mirror reflection glow -->
+  <ellipse cx="250" cy="210" rx="80" ry="110" fill="rgba(139,92,246,0.15)"/>
+  <!-- Person silhouette (before) -->
+  <circle cx="250" cy="140" r="25" fill="rgba(255,255,255,0.2)"/>
+  <path d="M 220 200 Q 225 170 250 165 Q 275 170 280 200 L 285 260 L 215 260 Z" fill="rgba(255,255,255,0.15)"/>
+  <!-- Mirror label -->
+  <text x="250" y="360" text-anchor="middle" font-family="system-ui" font-size="10" fill="rgba(255,255,255,0.4)">Before</text>
+  
+  <!-- Arrow -->
+  <text x="370" y="225" text-anchor="middle" font-family="system-ui" font-size="35" fill="rgba(196,181,253,0.5)">→</text>
+  
+  <!-- Confident person (after) -->
+  <circle cx="540" cy="120" r="35" fill="rgba(196,181,253,0.35)" stroke="rgba(196,181,253,0.5)" stroke-width="2"/>
+  <circle cx="540" cy="105" r="22" fill="rgba(255,255,255,0.5)"/>
+  <!-- Star/glow around confident figure -->
+  <circle cx="540" cy="120" r="55" fill="none" stroke="rgba(196,181,253,0.2)" stroke-width="1" stroke-dasharray="5 5"/>
+  <!-- Professional suit body -->
+  <path d="M 495 210 Q 503 175 540 168 Q 577 175 585 210 L 592 285 L 488 285 Z" fill="rgba(109,40,217,0.4)" stroke="rgba(196,181,253,0.3)" stroke-width="1"/>
+  <!-- Tie -->
+  <polygon points="540,175 534,185 537,215 540,220 543,215 546,185" fill="rgba(251,191,36,0.7)"/>
+  
+  <!-- Achievement badges around -->
+  <circle cx="640" cy="105" r="28" fill="rgba(251,191,36,0.2)" stroke="#fbbf24" stroke-width="1.5"/>
+  <text x="640" y="101" text-anchor="middle" font-family="system-ui" font-size="16">⭐</text>
+  <text x="640" y="118" text-anchor="middle" font-family="system-ui" font-size="8" fill="#fbbf24">Leader</text>
+  
+  <circle cx="680" cy="190" r="28" fill="rgba(52,211,153,0.2)" stroke="#34d399" stroke-width="1.5"/>
+  <text x="680" y="186" text-anchor="middle" font-family="system-ui" font-size="16">🏆</text>
+  <text x="680" y="204" text-anchor="middle" font-family="system-ui" font-size="8" fill="#34d399">Confident</text>
+  
+  <circle cx="628" cy="275" r="28" fill="rgba(96,165,250,0.2)" stroke="#60a5fa" stroke-width="1.5"/>
+  <text x="628" y="271" text-anchor="middle" font-family="system-ui" font-size="16">💡</text>
+  <text x="628" y="289" text-anchor="middle" font-family="system-ui" font-size="8" fill="#60a5fa">Creative</text>
+  
+  <!-- Skill tags -->
+  <rect x="55" y="310" width="650" height="35" rx="10" fill="rgba(0,0,0,0.3)"/>
+  <text x="380" y="332" text-anchor="middle" font-family="system-ui" font-size="10" fill="rgba(196,181,253,0.7)">Confidence • Leadership • Networking • Executive Presence • Growth Mindset</text>
+  
+  <text x="540" y="320" text-anchor="middle" font-family="system-ui" font-size="10" fill="rgba(255,255,255,0.4)">After</text>
+  
+  <ellipse cx="400" cy="445" rx="320" ry="15" fill="rgba(109,40,217,0.15)"/>
+</svg>

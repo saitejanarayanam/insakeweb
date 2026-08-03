@@ -111,6 +111,7 @@ model Course {
   price       Int // in paise (INR minor unit)
   studyHours  Int?
   difficulty  String? // Beginner | Intermediate | Advanced
+  imageUrl    String?
   featured    Boolean  @default(true)
   published   Boolean  @default(true)
   createdAt   DateTime @default(now())

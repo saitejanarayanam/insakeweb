@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f3460"/>
+      <stop offset="100%" style="stop-color:#0d9488"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <pattern id="dots" width="25" height="25" patternUnits="userSpaceOnUse">
+    <circle cx="12" cy="12" r="1" fill="rgba(255,255,255,0.06)"/>
+  </pattern>
+  <rect width="800" height="450" fill="url(#dots)"/>
+  
+  <!-- Building (campus side) -->
+  <rect x="55" y="200" width="200" height="160" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+  <rect x="55" y="180" width="200" height="25" rx="4" fill="rgba(255,255,255,0.1)"/>
+  <text x="155" y="197" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="600" fill="rgba(255,255,255,0.6)">UNIVERSITY</text>
+  <!-- Windows -->
+  <rect x="75" y="215" width="30" height="25" rx="2" fill="rgba(255,255,255,0.15)"/>
+  <rect x="115" y="215" width="30" height="25" rx="2" fill="rgba(255,255,255,0.15)"/>
+  <rect x="155" y="215" width="30" height="25" rx="2" fill="rgba(255,255,255,0.15)"/>
+  <rect x="195" y="215" width="30" height="25" rx="2" fill="rgba(255,255,255,0.15)"/>
+  <rect x="75" y="255" width="30" height="25" rx="2" fill="rgba(255,255,255,0.15)"/>
+  <rect x="115" y="255" width="30" height="25" rx="2" fill="rgba(255,255,255,0.15)"/>
+  <rect x="155" y="255" width="30" height="25" rx="2" fill="rgba(255,255,255,0.15)"/>
+  <rect x="195" y="255" width="30" height="25" rx="2" fill="rgba(255,255,255,0.15)"/>
+  <!-- Door -->
+  <rect x="135" y="320" width="40" height="40" rx="3" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+  <!-- Graduation cap -->
+  <polygon points="155,145 110,165 155,175 200,165" fill="rgba(255,255,255,0.5)"/>
+  <rect x="150" y="165" width="10" height="18" fill="rgba(255,255,255,0.4)"/>
+  <circle cx="155" cy="185" r="6" fill="#fbbf24"/>
+  <!-- Tassel -->
+  <line x1="190" y1="163" x2="208" y2="180" stroke="rgba(255,255,255,0.4)" stroke-width="2"/>
+  <circle cx="210" cy="183" r="4" fill="#fbbf24"/>
+  
+  <!-- Arrow in middle -->
+  <text x="320" y="235" text-anchor="middle" font-family="system-ui" font-size="40" fill="rgba(255,255,255,0.4)">→</text>
+  <text x="320" y="265" text-anchor="middle" font-family="system-ui" font-size="9" fill="rgba(255,255,255,0.4)">Career Journey</text>
+  
+  <!-- Office building -->
+  <rect x="430" y="160" width="210" height="200" fill="rgba(255,255,255,0.07)" stroke="rgba(20,184,166,0.3)" stroke-width="1"/>
+  <rect x="430" y="140" width="210" height="24" rx="4" fill="rgba(20,184,166,0.2)"/>
+  <text x="535" y="157" text-anchor="middle" font-family="system-ui" font-size="11" font-weight="600" fill="rgba(20,184,166,0.9)">CORPORATE HQ</text>
+  <!-- Grid windows -->
+  <rect x="445" y="175" width="25" height="20" rx="2" fill="rgba(20,184,166,0.2)"/>
+  <rect x="477" y="175" width="25" height="20" rx="2" fill="rgba(20,184,166,0.2)"/>
+  <rect x="509" y="175" width="25" height="20" rx="2" fill="rgba(255,255,255,0.15)"/>
+  <rect x="541" y="175" width="25" height="20" rx="2" fill="rgba(20,184,166,0.2)"/>
+  <rect x="573" y="175" width="25" height="20" rx="2" fill="rgba(255,255,255,0.15)"/>
+  <rect x="605" y="175" width="25" height="20" rx="2" fill="rgba(20,184,166,0.2)"/>
+  <rect x="445" y="205" width="25" height="20" rx="2" fill="rgba(255,255,255,0.15)"/>
+  <rect x="477" y="205" width="25" height="20" rx="2" fill="rgba(20,184,166,0.2)"/>
+  <rect x="509" y="205" width="25" height="20" rx="2" fill="rgba(20,184,166,0.2)"/>
+  <rect x="541" y="205" width="25" height="20" rx="2" fill="rgba(255,255,255,0.15)"/>
+  <rect x="573" y="205" width="25" height="20" rx="2" fill="rgba(20,184,166,0.2)"/>
+  <rect x="605" y="205" width="25" height="20" rx="2" fill="rgba(255,255,255,0.15)"/>
+  <rect x="445" y="235" width="25" height="20" rx="2" fill="rgba(20,184,166,0.2)"/>
+  <rect x="477" y="235" width="25" height="20" rx="2" fill="rgba(255,255,255,0.15)"/>
+  <rect x="509" y="235" width="25" height="20" rx="2" fill="rgba(20,184,166,0.2)"/>
+  <rect x="541" y="235" width="25" height="20" rx="2" fill="rgba(20,184,166,0.2)"/>
+  <rect x="573" y="235" width="25" height="20" rx="2" fill="rgba(255,255,255,0.15)"/>
+  <rect x="605" y="235" width="25" height="20" rx="2" fill="rgba(20,184,166,0.2)"/>
+  <!-- Door -->
+  <rect x="510" y="315" width="50" height="45" rx="3" fill="rgba(20,184,166,0.25)" stroke="rgba(20,184,166,0.4)" stroke-width="1"/>
+  <!-- Briefcase icon -->
+  <rect x="510" y="95" width="50" height="38" rx="6" fill="rgba(20,184,166,0.3)" stroke="rgba(20,184,166,0.5)" stroke-width="1.5"/>
+  <rect x="522" y="89" width="26" height="10" rx="5" fill="rgba(20,184,166,0.4)" stroke="rgba(20,184,166,0.5)" stroke-width="1"/>
+  <line x1="510" y1="112" x2="560" y2="112" stroke="rgba(20,184,166,0.4)" stroke-width="1.5"/>
+  
+  <!-- Bottom skills row -->
+  <rect x="55" y="390" width="690" height="35" rx="10" fill="rgba(0,0,0,0.3)"/>
+  <text x="400" y="410" text-anchor="middle" font-family="system-ui" font-size="10" fill="rgba(255,255,255,0.5)">Resume Building • Interview Skills • Office Etiquette • Email Drafting • Presentation Skills</text>
+  
+  <ellipse cx="400" cy="448" rx="320" ry="15" fill="rgba(13,148,136,0.15)"/>
+</svg>

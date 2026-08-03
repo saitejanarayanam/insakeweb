@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0c2340"/>
+      <stop offset="100%" style="stop-color:#0369a1"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <pattern id="dots" width="25" height="25" patternUnits="userSpaceOnUse">
+    <circle cx="12" cy="12" r="1" fill="rgba(255,255,255,0.06)"/>
+  </pattern>
+  <rect width="800" height="450" fill="url(#dots)"/>
+  
+  <!-- Team circle in center -->
+  <!-- Person 1 (top) -->
+  <circle cx="400" cy="120" r="30" fill="rgba(14,165,233,0.3)" stroke="rgba(56,189,248,0.5)" stroke-width="2"/>
+  <circle cx="400" cy="108" r="14" fill="rgba(255,255,255,0.5)"/>
+  <path d="M 374 155 Q 380 135 400 130 Q 420 135 426 155" fill="rgba(14,165,233,0.4)"/>
+  
+  <!-- Person 2 (bottom-left) -->
+  <circle cx="230" cy="290" r="30" fill="rgba(34,197,94,0.3)" stroke="rgba(74,222,128,0.5)" stroke-width="2"/>
+  <circle cx="230" cy="278" r="14" fill="rgba(255,255,255,0.5)"/>
+  <path d="M 204 325 Q 210 305 230 300 Q 250 305 256 325" fill="rgba(34,197,94,0.4)"/>
+  
+  <!-- Person 3 (bottom-right) -->
+  <circle cx="570" cy="290" r="30" fill="rgba(251,191,36,0.3)" stroke="rgba(253,224,71,0.5)" stroke-width="2"/>
+  <circle cx="570" cy="278" r="14" fill="rgba(255,255,255,0.5)"/>
+  <path d="M 544 325 Q 550 305 570 300 Q 590 305 596 325" fill="rgba(251,191,36,0.4)"/>
+  
+  <!-- Person 4 (left) -->
+  <circle cx="140" cy="195" r="28" fill="rgba(168,85,247,0.3)" stroke="rgba(196,181,253,0.5)" stroke-width="2"/>
+  <circle cx="140" cy="184" r="13" fill="rgba(255,255,255,0.45)"/>
+  
+  <!-- Person 5 (right) -->
+  <circle cx="660" cy="195" r="28" fill="rgba(248,113,113,0.3)" stroke="rgba(252,165,165,0.5)" stroke-width="2"/>
+  <circle cx="660" cy="184" r="13" fill="rgba(255,255,255,0.45)"/>
+  
+  <!-- Connection lines -->
+  <line x1="400" y1="150" x2="230" y2="260" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <line x1="400" y1="150" x2="570" y2="260" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <line x1="230" y1="260" x2="570" y2="260" stroke="rgba(255,255,255,0.2)" stroke-width="1.5" stroke-dasharray="6 4"/>
+  <line x1="400" y1="150" x2="165" y2="195" stroke="rgba(255,255,255,0.15)" stroke-width="1" stroke-dasharray="4 4"/>
+  <line x1="400" y1="150" x2="635" y2="195" stroke="rgba(255,255,255,0.15)" stroke-width="1" stroke-dasharray="4 4"/>
+  <line x1="165" y1="195" x2="230" y2="265" stroke="rgba(255,255,255,0.15)" stroke-width="1" stroke-dasharray="4 4"/>
+  <line x1="635" y1="195" x2="570" y2="265" stroke="rgba(255,255,255,0.15)" stroke-width="1" stroke-dasharray="4 4"/>
+  
+  <!-- Central hub -->
+  <circle cx="400" cy="218" r="45" fill="rgba(3,105,161,0.35)" stroke="rgba(56,189,248,0.4)" stroke-width="2"/>
+  <text x="400" y="212" text-anchor="middle" font-family="system-ui" font-size="22">🤝</text>
+  <text x="400" y="232" text-anchor="middle" font-family="system-ui" font-size="9" fill="rgba(255,255,255,0.7)">Teamwork</text>
+  
+  <!-- Skills floating tags -->
+  <rect x="55" y="65" width="90" height="25" rx="12" fill="rgba(14,165,233,0.25)" stroke="rgba(56,189,248,0.4)" stroke-width="1"/>
+  <text x="100" y="82" text-anchor="middle" font-family="system-ui" font-size="9" fill="rgba(255,255,255,0.7)">Empathy</text>
+  
+  <rect x="655" y="65" width="90" height="25" rx="12" fill="rgba(251,191,36,0.25)" stroke="rgba(253,224,71,0.4)" stroke-width="1"/>
+  <text x="700" y="82" text-anchor="middle" font-family="system-ui" font-size="9" fill="rgba(255,255,255,0.7)">Time Mgmt</text>
+  
+  <rect x="55" y="360" width="90" height="25" rx="12" fill="rgba(34,197,94,0.25)" stroke="rgba(74,222,128,0.4)" stroke-width="1"/>
+  <text x="100" y="377" text-anchor="middle" font-family="system-ui" font-size="9" fill="rgba(255,255,255,0.7)">Adaptability</text>
+  
+  <rect x="655" y="360" width="90" height="25" rx="12" fill="rgba(168,85,247,0.25)" stroke="rgba(196,181,253,0.4)" stroke-width="1"/>
+  <text x="700" y="377" text-anchor="middle" font-family="system-ui" font-size="9" fill="rgba(255,255,255,0.7)">Leadership</text>
+  
+  <rect x="280" y="390" width="240" height="30" rx="15" fill="rgba(0,0,0,0.3)"/>
+  <text x="400" y="410" text-anchor="middle" font-family="system-ui" font-size="10" fill="rgba(255,255,255,0.6)">Workplace Essentials · Professional Growth</text>
+  
+  <ellipse cx="400" cy="445" rx="320" ry="15" fill="rgba(3,105,161,0.15)"/>
+</svg>

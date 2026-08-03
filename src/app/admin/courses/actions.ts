@@ -14,6 +14,7 @@ function parseCourseForm(formData: FormData) {
     price: Math.round(Number(formData.get("priceRupees") ?? 0) * 100),
     studyHours: formData.get("studyHours") ? Number(formData.get("studyHours")) : null,
     difficulty: String(formData.get("difficulty") ?? "") || null,
+    imageUrl: String(formData.get("imageUrl") ?? "").trim() || null,
     categoryId: String(formData.get("categoryId") ?? "") || null,
     mentorId: String(formData.get("mentorId") ?? "") || null,
     featured: formData.get("featured") === "on",

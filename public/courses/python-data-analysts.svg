@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f1b2d"/>
+      <stop offset="100%" style="stop-color:#0ea5e9"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1"/>
+  </pattern>
+  <rect width="800" height="450" fill="url(#grid)"/>
+  
+  <!-- Python terminal -->
+  <rect x="45" y="75" width="430" height="300" rx="12" fill="#0d1117" stroke="rgba(14,165,233,0.3)" stroke-width="1"/>
+  <!-- Terminal header -->
+  <rect x="45" y="75" width="430" height="32" rx="12" fill="#161b22"/>
+  <rect x="45" y="93" width="430" height="14" fill="#161b22"/>
+  <circle cx="68" cy="91" r="6" fill="#ff5f57"/>
+  <circle cx="86" cy="91" r="6" fill="#ffbd2e"/>
+  <circle cx="104" cy="91" r="6" fill="#28ca42"/>
+  <text x="230" y="95" text-anchor="middle" font-family="monospace" font-size="9" fill="rgba(255,255,255,0.4)">analysis.py</text>
+  <!-- Python code -->
+  <text x="62" y="128" font-family="monospace" font-size="9" fill="#ff7b72">import</text>
+  <text x="108" y="128" font-family="monospace" font-size="9" fill="#e6edf3">pandas</text>
+  <text x="158" y="128" font-family="monospace" font-size="9" fill="#ff7b72">as</text>
+  <text x="175" y="128" font-family="monospace" font-size="9" fill="#e6edf3">pd</text>
+  
+  <text x="62" y="144" font-family="monospace" font-size="9" fill="#ff7b72">import</text>
+  <text x="108" y="144" font-family="monospace" font-size="9" fill="#e6edf3">matplotlib.pyplot</text>
+  <text x="272" y="144" font-family="monospace" font-size="9" fill="#ff7b72">as</text>
+  <text x="290" y="144" font-family="monospace" font-size="9" fill="#e6edf3">plt</text>
+  
+  <text x="62" y="160" font-family="monospace" font-size="9" fill="#ff7b72">from</text>
+  <text x="95" y="160" font-family="monospace" font-size="9" fill="#e6edf3">sklearn.linear_model</text>
+  <text x="268" y="160" font-family="monospace" font-size="9" fill="#ff7b72">import</text>
+  <text x="318" y="160" font-family="monospace" font-size="9" fill="#e6edf3">LinearRegression</text>
+  
+  <text x="62" y="180" font-family="monospace" font-size="9" fill="#79c0ff"># Load dataset</text>
+  <text x="62" y="196" font-family="monospace" font-size="9" fill="#e6edf3">df</text>
+  <text x="78" y="196" font-family="monospace" font-size="9" fill="#ff7b72">=</text>
+  <text x="86" y="196" font-family="monospace" font-size="9" fill="#e6edf3">pd.read_csv(</text>
+  <text x="178" y="196" font-family="monospace" font-size="9" fill="#a5d6ff">'sales_data.csv'</text>
+  <text x="284" y="196" font-family="monospace" font-size="9" fill="#e6edf3">)</text>
+  
+  <text x="62" y="216" font-family="monospace" font-size="9" fill="#e6edf3">df</text>
+  <text x="78" y="216" font-family="monospace" font-size="9" fill="#e6edf3">=</text>
+  <text x="86" y="216" font-family="monospace" font-size="9" fill="#e6edf3">df.dropna().groupby(</text>
+  <text x="260" y="216" font-family="monospace" font-size="9" fill="#a5d6ff">'region'</text>
+  <text x="305" y="216" font-family="monospace" font-size="9" fill="#e6edf3">)</text>
+  
+  <text x="62" y="236" font-family="monospace" font-size="9" fill="#79c0ff"># Fit model</text>
+  <text x="62" y="252" font-family="monospace" font-size="9" fill="#e6edf3">model</text>
+  <text x="100" y="252" font-family="monospace" font-size="9" fill="#e6edf3">=</text>
+  <text x="108" y="252" font-family="monospace" font-size="9" fill="#e6edf3">LinearRegression().fit(X, y)</text>
+  
+  <text x="62" y="272" font-family="monospace" font-size="9" fill="#e6edf3">score</text>
+  <text x="103" y="272" font-family="monospace" font-size="9" fill="#e6edf3">=</text>
+  <text x="111" y="272" font-family="monospace" font-size="9" fill="#e6edf3">model.score(X_test, y_test)</text>
+  
+  <!-- Output section -->
+  <rect x="45" y="315" width="430" height="60" fill="rgba(0,0,0,0.5)"/>
+  <text x="62" y="333" font-family="monospace" font-size="9" fill="#3fb950">$ python analysis.py</text>
+  <text x="62" y="350" font-family="monospace" font-size="9" fill="rgba(255,255,255,0.6)">R² Score: 0.8941  |  RMSE: 124.3  |  Records: 12,480</text>
+  <text x="62" y="366" font-family="monospace" font-size="9" fill="rgba(255,255,255,0.4)">Prediction accuracy: 89.4% ✓</text>
+  
+  <!-- Data viz panel -->
+  <rect x="490" y="75" width="270" height="300" rx="12" fill="rgba(0,0,0,0.4)" stroke="rgba(14,165,233,0.3)" stroke-width="1"/>
+  <text x="506" y="100" font-family="system-ui" font-size="11" fill="rgba(255,255,255,0.6)">Data Insights</text>
+  <!-- Pandas DataFrame mini table -->
+  <rect x="506" y="112" width="238" height="100" rx="6" fill="rgba(14,165,233,0.08)"/>
+  <rect x="506" y="112" width="238" height="18" rx="6" fill="rgba(14,165,233,0.2)"/>
+  <text x="515" y="124" font-family="monospace" font-size="7" fill="rgba(255,255,255,0.6)">region   sales   profit  growth</text>
+  <text x="515" y="140" font-family="monospace" font-size="7" fill="rgba(255,255,255,0.7)">North    4,120   892     12.4%</text>
+  <text x="515" y="155" font-family="monospace" font-size="7" fill="rgba(255,255,255,0.7)">South    3,540   710     9.8%</text>
+  <text x="515" y="170" font-family="monospace" font-size="7" fill="rgba(255,255,255,0.7)">East     5,890   1,240   18.2%</text>
+  <text x="515" y="185" font-family="monospace" font-size="7" fill="rgba(255,255,255,0.7)">West     3,100   580     7.3%</text>
+  <text x="515" y="200" font-family="monospace" font-size="7" fill="rgba(14,165,233,0.7)">4 rows × 4 columns</text>
+  
+  <!-- Matplotlib chart -->
+  <rect x="506" y="224" width="238" height="130" rx="6" fill="rgba(0,0,0,0.3)"/>
+  <rect x="520" y="300" width="25" height="40" rx="2" fill="#0ea5e9"/>
+  <rect x="552" y="285" width="25" height="55" rx="2" fill="#22d3ee"/>
+  <rect x="584" y="265" width="25" height="75" rx="2" fill="#38bdf8"/>
+  <rect x="616" y="275" width="25" height="65" rx="2" fill="#7dd3fc"/>
+  <rect x="648" y="255" width="25" height="85" rx="2" fill="#0ea5e9"/>
+  <line x1="510" y1="344" x2="730" y2="344" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+  <text x="616" y="242" text-anchor="middle" font-family="system-ui" font-size="8" fill="rgba(255,255,255,0.4)">Sales by Region</text>
+  
+  <ellipse cx="400" cy="440" rx="320" ry="25" fill="rgba(14,165,233,0.12)"/>
+</svg>

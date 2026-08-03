@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a0533"/>
+      <stop offset="100%" style="stop-color:#9333ea"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <pattern id="dots" width="30" height="30" patternUnits="userSpaceOnUse">
+    <circle cx="15" cy="15" r="1" fill="rgba(255,255,255,0.05)"/>
+  </pattern>
+  <rect width="800" height="450" fill="url(#dots)"/>
+  
+  <!-- Projector screen -->
+  <rect x="100" y="70" width="480" height="290" rx="8" fill="rgba(255,255,255,0.93)" stroke="rgba(255,255,255,0.5)" stroke-width="2"/>
+  <!-- Slide content on screen -->
+  <rect x="115" y="82" width="450" height="30" rx="4" fill="#7c3aed"/>
+  <text x="340" y="102" text-anchor="middle" font-family="system-ui" font-size="12" font-weight="700" fill="white">Q3 Business Strategy</text>
+  <!-- Slide body -->
+  <rect x="130" y="125" width="200" height="10" rx="3" fill="#374151"/>
+  <rect x="130" y="143" width="170" height="7" rx="2" fill="#9ca3af"/>
+  <rect x="130" y="158" width="180" height="7" rx="2" fill="#9ca3af"/>
+  <rect x="130" y="173" width="150" height="7" rx="2" fill="#9ca3af"/>
+  <!-- Bullet points -->
+  <circle cx="142" cy="197" r="3" fill="#7c3aed"/>
+  <rect x="152" y="193" width="140" height="7" rx="2" fill="#6b7280"/>
+  <circle cx="142" cy="213" r="3" fill="#7c3aed"/>
+  <rect x="152" y="209" width="120" height="7" rx="2" fill="#6b7280"/>
+  <circle cx="142" cy="229" r="3" fill="#7c3aed"/>
+  <rect x="152" y="225" width="130" height="7" rx="2" fill="#6b7280"/>
+  <!-- Chart on slide -->
+  <rect x="355" y="118" width="215" height="180" rx="4" fill="#f9fafb"/>
+  <rect x="370" y="235" width="20" height="45" rx="2" fill="#7c3aed"/>
+  <rect x="398" y="218" width="20" height="62" rx="2" fill="#9333ea"/>
+  <rect x="426" y="200" width="20" height="80" rx="2" fill="#a855f7"/>
+  <rect x="454" y="185" width="20" height="95" rx="2" fill="#c084fc"/>
+  <rect x="482" y="168" width="20" height="112" rx="2" fill="#e879f9"/>
+  <line x1="360" y1="284" x2="510" y2="284" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="435" y="130" text-anchor="middle" font-family="system-ui" font-size="8" fill="#6b7280">Growth Trend</text>
+  <!-- Slide page indicator -->
+  <text x="340" y="350" text-anchor="middle" font-family="system-ui" font-size="9" fill="#6b7280">Slide 4 of 18</text>
+  
+  <!-- Presenter pointing -->
+  <circle cx="680" cy="180" r="35" fill="rgba(255,255,255,0.15)" stroke="rgba(233,121,249,0.4)" stroke-width="2"/>
+  <circle cx="680" cy="162" r="18" fill="rgba(255,255,255,0.3)"/>
+  <path d="M 648 230 Q 655 200 680 195 Q 705 200 712 230 L 715 280 L 645 280 Z" fill="rgba(147,51,234,0.4)"/>
+  <!-- Pointer stick -->
+  <line x1="650" y1="215" x2="580" y2="230" stroke="rgba(255,255,255,0.6)" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="578" cy="231" r="4" fill="#e879f9"/>
+  <!-- Clicker device -->
+  <rect x="710" y="220" width="14" height="22" rx="4" fill="rgba(255,255,255,0.25)" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+  <circle cx="717" cy="228" r="3" fill="#e879f9"/>
+  
+  <!-- Audience dots at bottom -->
+  <circle cx="130" cy="410" r="12" fill="rgba(255,255,255,0.15)"/>
+  <circle cx="165" cy="410" r="12" fill="rgba(255,255,255,0.15)"/>
+  <circle cx="200" cy="410" r="12" fill="rgba(255,255,255,0.15)"/>
+  <circle cx="235" cy="410" r="12" fill="rgba(255,255,255,0.15)"/>
+  <circle cx="270" cy="410" r="12" fill="rgba(255,255,255,0.15)"/>
+  <circle cx="305" cy="410" r="12" fill="rgba(255,255,255,0.15)"/>
+  <text x="400" y="418" text-anchor="middle" font-family="system-ui" font-size="9" fill="rgba(255,255,255,0.4)">Master the art of persuasive presentations</text>
+  
+  <ellipse cx="400" cy="445" rx="320" ry="15" fill="rgba(147,51,234,0.15)"/>
+</svg>

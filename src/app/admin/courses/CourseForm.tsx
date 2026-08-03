@@ -55,6 +55,17 @@ export function CourseForm({
       </div>
 
       <div>
+        <label className="text-sm font-medium">Image URL</label>
+        <input
+          name="imageUrl"
+          type="url"
+          placeholder="https://…"
+          defaultValue={course?.imageUrl ?? ""}
+          className="mt-1 w-full rounded-lg border border-(--color-border) bg-(--background) px-3 py-2 text-sm outline-none focus:border-(--color-primary)"
+        />
+      </div>
+
+      <div>
         <label className="text-sm font-medium">Syllabus (markdown-ish: # heading, - bullet)</label>
         <textarea
           name="syllabus"

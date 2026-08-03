@@ -10,7 +10,18 @@ export default async function HomePage() {
   const [featuredCourses, partners, mentors, testimonials] = await Promise.all([
     prisma.course.findMany({
       where: { published: true },
-      include: { category: true },
+      select: {
+        id: true,
+        slug: true,
+        title: true,
+        tagline: true,
+        price: true,
+        studyHours: true,
+        difficulty: true,
+        featured: true,
+        imageUrl: true,
+        category: { select: { name: true, slug: true } },
+      },
       orderBy: { createdAt: "desc" },
       take: 6,
     }),
