@@ -1,0 +1,23 @@
+name: Daily blog - auto-publish unreviewed drafts
+
+on:
+  schedule:
+    - cron: "30 15 * * *" # 9:00 PM IST (UTC+5:30)
+  workflow_dispatch:
+
+jobs:
+  auto-publish:
+    runs-on: ubuntu-latest
+    env:
+      DATABASE_URL: ${{ secrets.DATABASE_URL }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - run: npm ci
+
+      - name: Auto-publish today's unreviewed drafts
+        run: npm run blog:auto-publish

@@ -54,3 +54,7 @@ skills-lock.json
 
 # Supabase CLI local project link (machine-specific, not app code)
 /supabase/.temp/
+
+# daily blog generator working files
+/.data/
+/scripts/output/

@@ -1,5 +1,6 @@
 import { prisma } from "@/lib/prisma";
 import { deleteContactMessage, markContactMessageRead } from "./actions";
+import { AdminSearchBox } from "@/components/admin/AdminSearchBox";
 
 export default async function AdminContactPage() {
   const messages = await prisma.contactMessage.findMany({ orderBy: { createdAt: "desc" } });
@@ -11,13 +12,16 @@ export default async function AdminContactPage() {
         Submissions from the public /contact form.
       </p>
 
-      <div className="mt-6 space-y-3">
+      <AdminSearchBox scope="contact" placeholder="Search messages..." />
+
+      <div className="mt-4 space-y-3" data-search-scope="contact">
         {messages.length === 0 && (
           <p className="text-sm text-(--color-muted)">No messages yet.</p>
         )}
         {messages.map((m) => (
           <div
             key={m.id}
+            data-search-row
             className={`rounded-2xl border p-4 ${
               m.read ? "border-(--color-border)" : "border-(--color-primary) bg-(--color-primary)/5"
             }`}

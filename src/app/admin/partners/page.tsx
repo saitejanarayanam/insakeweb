@@ -1,5 +1,6 @@
 import { prisma } from "@/lib/prisma";
 import { createPartner, deletePartner } from "./actions";
+import { AdminSearchBox } from "@/components/admin/AdminSearchBox";
 
 export default async function AdminPartnersPage() {
   const partners = await prisma.partnerInstitution.findMany({ orderBy: { order: "asc" } });
@@ -23,10 +24,13 @@ export default async function AdminPartnersPage() {
         </button>
       </form>
 
-      <div className="mt-6 flex max-w-lg flex-wrap gap-2">
+      <AdminSearchBox scope="partners" placeholder="Search partners..." />
+
+      <div className="mt-4 flex max-w-lg flex-wrap gap-2" data-search-scope="partners">
         {partners.map((p) => (
           <div
             key={p.id}
+            data-search-row
             className="flex items-center gap-2 rounded-full border border-(--color-border) px-3 py-1.5 text-sm"
           >
             {p.name}

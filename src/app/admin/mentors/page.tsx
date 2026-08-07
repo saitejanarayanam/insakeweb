@@ -1,5 +1,7 @@
 import { prisma } from "@/lib/prisma";
 import { createMentor, deleteMentor } from "./actions";
+import { AdminSearchBox } from "@/components/admin/AdminSearchBox";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
 export default async function AdminMentorsPage() {
   const mentors = await prisma.mentor.findMany({ orderBy: { order: "asc" } });
@@ -28,6 +30,12 @@ export default async function AdminMentorsPage() {
           placeholder="Company (optional)"
           className="w-full rounded-lg border border-(--color-border) bg-(--background) px-3 py-2 text-sm outline-none focus:border-(--color-primary)"
         />
+        <input
+          name="photoUrl"
+          type="url"
+          placeholder="Photo URL (optional)"
+          className="w-full rounded-lg border border-(--color-border) bg-(--background) px-3 py-2 text-sm outline-none focus:border-(--color-primary)"
+        />
         <textarea
           name="bio"
           placeholder="Bio"
@@ -43,16 +51,24 @@ export default async function AdminMentorsPage() {
         </button>
       </form>
 
-      <div className="mt-6 space-y-3">
+      <AdminSearchBox scope="mentors" placeholder="Search mentors..." />
+
+      <div className="mt-4 space-y-3" data-search-scope="mentors">
         {mentors.map((m) => (
-          <div key={m.id} className="flex items-start justify-between rounded-2xl border border-(--color-border) p-4">
-            <div>
-              <p className="text-sm font-semibold">{m.name}</p>
-              <p className="text-xs text-(--color-muted)">
-                {m.title}
-                {m.company ? `, ${m.company}` : ""}
-              </p>
-              <p className="mt-1 text-xs text-(--color-muted)">{m.bio}</p>
+          <div key={m.id} data-search-row className="flex items-start justify-between rounded-2xl border border-(--color-border) p-4">
+            <div className="flex items-start gap-3">
+              <Avatar className="h-10 w-10">
+                {m.photoUrl && <AvatarImage src={m.photoUrl} alt={m.name} />}
+                <AvatarFallback>{m.name.slice(0, 1).toUpperCase()}</AvatarFallback>
+              </Avatar>
+              <div>
+                <p className="text-sm font-semibold">{m.name}</p>
+                <p className="text-xs text-(--color-muted)">
+                  {m.title}
+                  {m.company ? `, ${m.company}` : ""}
+                </p>
+                <p className="mt-1 text-xs text-(--color-muted)">{m.bio}</p>
+              </div>
             </div>
             <form action={deleteMentor.bind(null, m.id)}>
               <button type="submit" className="text-sm text-red-500 hover:underline">

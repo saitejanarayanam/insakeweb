@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { prisma } from "@/lib/prisma";
 import { deletePost } from "./actions";
+import { AdminSearchBox } from "@/components/admin/AdminSearchBox";
 
 export default async function AdminBlogPage() {
   const posts = await prisma.blogPost.findMany({ orderBy: { publishedAt: "desc" } });
@@ -17,7 +18,9 @@ export default async function AdminBlogPage() {
         </Link>
       </div>
 
-      <div className="mt-6 overflow-x-auto rounded-2xl border border-(--color-border)">
+      <AdminSearchBox scope="blog" placeholder="Search posts..." />
+
+      <div className="mt-4 overflow-x-auto rounded-2xl border border-(--color-border)" data-search-scope="blog">
         <table className="w-full text-left text-sm">
           <thead className="bg-(--color-surface) text-xs uppercase text-(--color-muted)">
             <tr>
@@ -28,7 +31,7 @@ export default async function AdminBlogPage() {
           </thead>
           <tbody>
             {posts.map((p) => (
-              <tr key={p.id} className="border-t border-(--color-border)">
+              <tr key={p.id} data-search-row className="border-t border-(--color-border)">
                 <td className="px-4 py-3 font-medium">{p.title}</td>
                 <td className="px-4 py-3">{p.published ? "Yes" : "No"}</td>
                 <td className="px-4 py-3 text-right">

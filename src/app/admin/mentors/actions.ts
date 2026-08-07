@@ -10,6 +10,7 @@ export async function createMentor(formData: FormData) {
       title: String(formData.get("title")).trim(),
       company: String(formData.get("company") ?? "").trim() || null,
       bio: String(formData.get("bio")).trim(),
+      photoUrl: String(formData.get("photoUrl") ?? "").trim() || null,
     },
   });
   revalidatePath("/admin/mentors");

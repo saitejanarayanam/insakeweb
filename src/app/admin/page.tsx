@@ -6,10 +6,11 @@ import { formatINR } from "@/lib/format";
 export const metadata: Metadata = { title: "Admin" };
 
 export default async function AdminOverviewPage() {
-  const [courseCount, postCount, userCount, orders] = await Promise.all([
+  const [courseCount, postCount, userCount, activeUserCount, orders] = await Promise.all([
     prisma.course.count(),
     prisma.blogPost.count(),
     prisma.user.count(),
+    prisma.user.count({ where: { enrollments: { some: {} } } }),
     prisma.order.findMany({ where: { status: "PAID" } }),
   ]);
 
@@ -19,6 +20,7 @@ export default async function AdminOverviewPage() {
     { label: "Courses", value: courseCount, href: "/admin/courses" },
     { label: "Blog posts", value: postCount, href: "/admin/blog" },
     { label: "Users", value: userCount, href: null },
+    { label: "Active users (enrolled)", value: activeUserCount, href: null },
     { label: "Revenue (paid orders)", value: formatINR(revenue), href: "/admin/orders" },
   ];
 

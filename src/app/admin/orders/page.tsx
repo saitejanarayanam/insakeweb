@@ -1,5 +1,6 @@
 import { prisma } from "@/lib/prisma";
 import { formatINR } from "@/lib/format";
+import { AdminSearchBox } from "@/components/admin/AdminSearchBox";
 
 export default async function AdminOrdersPage() {
   const orders = await prisma.order.findMany({
@@ -11,7 +12,11 @@ export default async function AdminOrdersPage() {
     <div>
       <h1 className="text-2xl font-bold">Orders</h1>
 
-      <div className="mt-6 overflow-x-auto rounded-2xl border border-(--color-border)">
+      <div className="mt-6">
+        <AdminSearchBox scope="orders" placeholder="Search orders..." />
+      </div>
+
+      <div className="mt-4 overflow-x-auto rounded-2xl border border-(--color-border)" data-search-scope="orders">
         <table className="w-full text-left text-sm">
           <thead className="bg-(--color-surface) text-xs uppercase text-(--color-muted)">
             <tr>
@@ -24,7 +29,7 @@ export default async function AdminOrdersPage() {
           </thead>
           <tbody>
             {orders.map((o) => (
-              <tr key={o.id} className="border-t border-(--color-border)">
+              <tr key={o.id} data-search-row className="border-t border-(--color-border)">
                 <td className="px-4 py-3 text-(--color-muted)">
                   {o.createdAt.toLocaleDateString("en-IN")}
                 </td>

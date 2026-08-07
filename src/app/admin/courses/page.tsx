@@ -2,6 +2,7 @@ import Link from "next/link";
 import { prisma } from "@/lib/prisma";
 import { formatINR } from "@/lib/format";
 import { deleteCourse } from "./actions";
+import { AdminSearchBox } from "@/components/admin/AdminSearchBox";
 
 export default async function AdminCoursesPage() {
   const courses = await prisma.course.findMany({
@@ -21,7 +22,9 @@ export default async function AdminCoursesPage() {
         </Link>
       </div>
 
-      <div className="mt-6 overflow-x-auto rounded-2xl border border-(--color-border)">
+      <AdminSearchBox scope="courses" placeholder="Search courses..." />
+
+      <div className="mt-4 overflow-x-auto rounded-2xl border border-(--color-border)" data-search-scope="courses">
         <table className="w-full text-left text-sm">
           <thead className="bg-(--color-surface) text-xs uppercase text-(--color-muted)">
             <tr>
@@ -34,7 +37,7 @@ export default async function AdminCoursesPage() {
           </thead>
           <tbody>
             {courses.map((c) => (
-              <tr key={c.id} className="border-t border-(--color-border)">
+              <tr key={c.id} data-search-row className="border-t border-(--color-border)">
                 <td className="px-4 py-3 font-medium">{c.title}</td>
                 <td className="px-4 py-3 text-(--color-muted)">{c.category?.name ?? "—"}</td>
                 <td className="px-4 py-3">{formatINR(c.price)}</td>

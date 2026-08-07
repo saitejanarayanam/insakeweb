@@ -1,5 +1,6 @@
 import { prisma } from "@/lib/prisma";
 import { createTestimonial, deleteTestimonial } from "./actions";
+import { AdminSearchBox } from "@/components/admin/AdminSearchBox";
 
 export default async function AdminTestimonialsPage() {
   const testimonials = await prisma.testimonial.findMany({ orderBy: { order: "asc" } });
@@ -37,9 +38,11 @@ export default async function AdminTestimonialsPage() {
         </button>
       </form>
 
-      <div className="mt-6 space-y-3">
+      <AdminSearchBox scope="testimonials" placeholder="Search testimonials..." />
+
+      <div className="mt-4 space-y-3" data-search-scope="testimonials">
         {testimonials.map((t) => (
-          <div key={t.id} className="flex items-start justify-between rounded-2xl border border-(--color-border) p-4">
+          <div key={t.id} data-search-row className="flex items-start justify-between rounded-2xl border border-(--color-border) p-4">
             <div>
               <p className="text-sm">&ldquo;{t.quote}&rdquo;</p>
               <p className="mt-1 text-xs text-(--color-muted)">
