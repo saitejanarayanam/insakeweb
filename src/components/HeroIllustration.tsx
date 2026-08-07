@@ -58,8 +58,8 @@ export function HeroIllustration() {
               aria-label={h.label}
               className={`absolute rounded-lg transition-all duration-300 ease-out ${
                 isActive
-                  ? "z-20 bg-(--color-primary)/10 shadow-lg shadow-(--color-primary)/30 ring-2 ring-(--color-primary)"
-                  : "cursor-pointer ring-1 ring-transparent hover:z-20 hover:bg-(--color-primary)/5 hover:shadow-lg hover:shadow-(--color-primary)/20 hover:ring-(--color-primary)/50"
+                  ? "z-20 bg-(--color-primary)/8 shadow-md shadow-(--color-primary)/20 ring-1 ring-(--color-primary)/50"
+                  : "cursor-pointer ring-1 ring-transparent hover:z-20 hover:bg-(--color-primary)/5 hover:shadow-md hover:shadow-(--color-primary)/10 hover:ring-(--color-primary)/30"
               }`}
               style={{
                 left: `${h.left}%`,
