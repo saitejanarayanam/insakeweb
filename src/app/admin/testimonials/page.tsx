@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { prisma } from "@/lib/prisma";
 import { createTestimonial, deleteTestimonial } from "./actions";
 import { AdminSearchBox } from "@/components/admin/AdminSearchBox";
@@ -50,11 +51,16 @@ export default async function AdminTestimonialsPage() {
                 {t.role ? ` — ${t.role}` : ""}
               </p>
             </div>
-            <form action={deleteTestimonial.bind(null, t.id)}>
-              <button type="submit" className="text-sm text-red-500 hover:underline">
-                Delete
-              </button>
-            </form>
+            <div className="flex shrink-0 gap-3 text-sm">
+              <Link href={`/admin/testimonials/${t.id}`} className="text-(--color-primary) hover:underline">
+                Edit
+              </Link>
+              <form action={deleteTestimonial.bind(null, t.id)}>
+                <button type="submit" className="text-red-500 hover:underline">
+                  Delete
+                </button>
+              </form>
+            </div>
           </div>
         ))}
       </div>

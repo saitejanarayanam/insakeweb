@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { prisma } from "@/lib/prisma";
 import { createPartner, deletePartner } from "./actions";
 import { AdminSearchBox } from "@/components/admin/AdminSearchBox";
@@ -34,6 +35,9 @@ export default async function AdminPartnersPage() {
             className="flex items-center gap-2 rounded-full border border-(--color-border) px-3 py-1.5 text-sm"
           >
             {p.name}
+            <Link href={`/admin/partners/${p.id}`} className="text-(--color-muted) hover:text-(--color-primary)">
+              Edit
+            </Link>
             <form action={deletePartner.bind(null, p.id)}>
               <button type="submit" className="text-(--color-muted) hover:text-red-500">
                 ×

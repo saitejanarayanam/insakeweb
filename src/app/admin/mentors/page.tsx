@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { prisma } from "@/lib/prisma";
 import { createMentor, deleteMentor } from "./actions";
 import { AdminSearchBox } from "@/components/admin/AdminSearchBox";
@@ -70,11 +71,16 @@ export default async function AdminMentorsPage() {
                 <p className="mt-1 text-xs text-(--color-muted)">{m.bio}</p>
               </div>
             </div>
-            <form action={deleteMentor.bind(null, m.id)}>
-              <button type="submit" className="text-sm text-red-500 hover:underline">
-                Delete
-              </button>
-            </form>
+            <div className="flex shrink-0 gap-3 text-sm">
+              <Link href={`/admin/mentors/${m.id}`} className="text-(--color-primary) hover:underline">
+                Edit
+              </Link>
+              <form action={deleteMentor.bind(null, m.id)}>
+                <button type="submit" className="text-red-500 hover:underline">
+                  Delete
+                </button>
+              </form>
+            </div>
           </div>
         ))}
       </div>
