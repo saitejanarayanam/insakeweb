@@ -29,28 +29,18 @@ const HOTSPOTS: Hotspot[] = [
   { id: "testimonial", label: "Learner testimonial", left: 35.5, top: 77, width: 27.5, height: 20 },
 ];
 
-/** CSS background-position/-size percentages that "window" into one region
- * of a full-size background image, so scaling the element scales exactly
- * that crop of the picture — no separate cropped assets needed. */
-function spriteStyle(h: Hotspot): React.CSSProperties {
-  return {
-    backgroundImage: `url(${IMAGE})`,
-    backgroundSize: `${10000 / h.width}% ${10000 / h.height}%`,
-    backgroundPosition: `${(100 * h.left) / (100 - h.width)}% ${(100 * h.top) / (100 - h.height)}%`,
-  };
-}
-
 export function HeroIllustration() {
   const [active, setActive] = useState<string | null>(null);
 
   return (
-    <div className="group relative mx-auto w-full max-w-2xl">
-      <div className="pointer-events-none absolute inset-0 rounded-3xl bg-(--color-primary)/10 blur-2xl transition-opacity duration-500 group-hover:opacity-70" />
+    <div className="relative mx-auto w-full max-w-2xl">
+      <div className="pointer-events-none absolute inset-0 rounded-3xl bg-(--color-primary)/10 blur-2xl" />
 
-      <div className="relative aspect-[1402/1122] w-full transition-transform duration-500 ease-out group-hover:-translate-y-1 group-hover:scale-[1.02]">
-        {/* Base picture — the single source of truth for every pixel; hotspots
-            below only add a background when active, so nothing is ever
-            double-rendered at rest. */}
+      <div className="relative aspect-[1402/1122] w-full">
+        {/* Base picture — the only place any pixel of the image is ever
+            drawn. Hotspots below never render image content of their own
+            (that was the source of the "doubling" look), they only draw a
+            highlight ring on top when active. */}
         <img
           src={IMAGE}
           alt="inSAKE certification platform: certificates, mentor support, and career outcomes"
@@ -58,7 +48,7 @@ export function HeroIllustration() {
           draggable={false}
         />
 
-        {/* Interactive hotspots windowed into the same image */}
+        {/* Interactive hotspots — highlight-only, no duplicated image content */}
         {HOTSPOTS.map((h) => {
           const isActive = active === h.id;
           return (
@@ -66,17 +56,16 @@ export function HeroIllustration() {
               key={h.id}
               type="button"
               aria-label={h.label}
-              className={`absolute cursor-pointer rounded-lg transition-all duration-300 ease-out ${
+              className={`absolute rounded-lg transition-all duration-300 ease-out ${
                 isActive
-                  ? "z-20 scale-[1.08] shadow-xl shadow-(--color-primary)/40 ring-2 ring-(--color-primary)"
-                  : ""
+                  ? "z-20 bg-(--color-primary)/10 shadow-lg shadow-(--color-primary)/30 ring-2 ring-(--color-primary)"
+                  : "cursor-pointer ring-1 ring-transparent hover:z-20 hover:bg-(--color-primary)/5 hover:shadow-lg hover:shadow-(--color-primary)/20 hover:ring-(--color-primary)/50"
               }`}
               style={{
                 left: `${h.left}%`,
                 top: `${h.top}%`,
                 width: `${h.width}%`,
                 height: `${h.height}%`,
-                ...(isActive ? spriteStyle(h) : undefined),
               }}
               onMouseEnter={() => setActive(h.id)}
               onMouseLeave={() => setActive((cur) => (cur === h.id ? null : cur))}
