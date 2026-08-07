@@ -10,6 +10,7 @@ function parsePostForm(formData: FormData) {
     title: String(formData.get("title")).trim(),
     excerpt: String(formData.get("excerpt") ?? "").trim(),
     content: String(formData.get("content") ?? "").trim(),
+    coverImage: String(formData.get("coverImage") ?? "").trim() || null,
     category: String(formData.get("category") ?? "").trim() || null,
     readMinutes: formData.get("readMinutes") ? Number(formData.get("readMinutes")) : null,
     courseId: String(formData.get("courseId") ?? "") || null,

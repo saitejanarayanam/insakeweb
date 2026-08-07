@@ -154,6 +154,15 @@ model Testimonial {
   createdAt DateTime @default(now())
 }
 
+model ContactMessage {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  message   String
+  read      Boolean  @default(false)
+  createdAt DateTime @default(now())
+}
+
 model Order {
   id            String      @id @default(cuid())
   userId        String

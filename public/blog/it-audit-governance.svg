@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e3a8a"/>
+      <stop offset="100%" style="stop-color:#2563eb"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:rgba(255,255,255,0.14)"/>
+      <stop offset="100%" style="stop-color:rgba(255,255,255,0.04)"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  </pattern>
+  <rect width="800" height="450" fill="url(#grid)"/>
+
+  <!-- Audit clipboard card -->
+  <rect x="470" y="90" width="230" height="270" rx="14" fill="url(#card)" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+  <rect x="530" y="80" width="110" height="24" rx="8" fill="rgba(255,255,255,0.3)"/>
+  <g stroke="rgba(255,255,255,0.85)" stroke-width="4" stroke-linecap="round">
+    <path d="M498 145 508 155 528 130"/>
+    <path d="M498 190 508 200 528 175"/>
+    <path d="M498 235 508 245 528 220"/>
+  </g>
+  <g fill="rgba(255,255,255,0.4)">
+    <rect x="545" y="140" width="130" height="10" rx="5"/>
+    <rect x="545" y="185" width="130" height="10" rx="5"/>
+    <rect x="545" y="230" width="90" height="10" rx="5"/>
+  </g>
+
+  <!-- Magnifying glass, center-left -->
+  <g transform="translate(230 225)">
+    <circle r="95" fill="rgba(255,255,255,0.08)"/>
+    <circle cx="-10" cy="-10" r="38" fill="none" stroke="rgba(255,255,255,0.55)" stroke-width="9"/>
+    <line x1="18" y1="18" x2="45" y2="45" stroke="rgba(255,255,255,0.55)" stroke-width="10" stroke-linecap="round"/>
+    <path d="M-10 -10 -25 -20" stroke="#93c5fd" stroke-width="5" stroke-linecap="round"/>
+  </g>
+
+  <g fill="#ffffff" opacity="0.55">
+    <path d="M120 100 124 110 134 114 124 118 120 128 116 118 106 114 116 110Z"/>
+    <path d="M700 350 703 358 711 361 703 364 700 372 697 364 689 361 697 358Z"/>
+  </g>
+</svg>

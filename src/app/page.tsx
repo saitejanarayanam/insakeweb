@@ -5,6 +5,8 @@ import { HeroIllustration } from "@/components/HeroIllustration";
 import { TrustBadges } from "@/components/TrustBadges";
 import { PersonIcon } from "@/components/icons/PersonIcon";
 import { ScrollCarousel } from "@/components/ScrollCarousel";
+import { Marquee } from "@/components/ui/marquee";
+import Team from "@/components/ui/team";
 
 export default async function HomePage() {
   const [featuredCourses, partners, mentors, testimonials] = await Promise.all([
@@ -26,7 +28,7 @@ export default async function HomePage() {
       take: 6,
     }),
     prisma.partnerInstitution.findMany({ orderBy: { order: "asc" } }),
-    prisma.mentor.findMany({ orderBy: { order: "asc" }, take: 4 }),
+    prisma.mentor.findMany({ orderBy: { order: "asc" }, take: 12 }),
     prisma.testimonial.findMany({ orderBy: { order: "asc" }, take: 3 }),
   ]);
 
@@ -34,7 +36,7 @@ export default async function HomePage() {
     <div>
       <section className="bg-grid relative overflow-hidden border-b border-(--color-ink-border) bg-(--color-ink) text-(--color-ink-foreground)">
         <div className="pointer-events-none absolute -top-24 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-(--color-primary)/20 blur-3xl" />
-        <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-4 py-20 lg:grid-cols-2 lg:py-28">
+        <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-4 py-10 lg:grid-cols-2 lg:py-14">
           <div className="text-center lg:text-left">
             <span className="inline-flex items-center gap-2 rounded-full border border-(--color-ink-border) bg-(--color-ink-surface) px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-(--color-primary)">
               Enterprise-grade certification platform
@@ -102,18 +104,19 @@ export default async function HomePage() {
             <p className="text-center text-xs font-semibold uppercase tracking-wide text-(--color-muted)">
               Trusted by learners from
             </p>
-            <div className="mt-6">
-              <ScrollCarousel>
+            <div className="relative mt-6">
+              <div className="pointer-events-none absolute top-0 left-0 z-10 h-full w-16 bg-linear-to-r from-(--background) to-transparent" />
+              <div className="pointer-events-none absolute top-0 right-0 z-10 h-full w-16 bg-linear-to-l from-(--background) to-transparent" />
+              <Marquee className="[--duration:30s] [--gap:1.25rem]" pauseOnHover>
                 {partners.map((p) => (
                   <span
                     key={p.id}
-                    data-slide
-                    className="flex shrink-0 snap-start items-center justify-center rounded-full border border-(--color-border) bg-(--color-surface) px-6 py-2.5 text-sm font-medium text-(--color-muted)"
+                    className="flex shrink-0 items-center justify-center rounded-full border border-(--color-border) bg-(--color-surface) px-6 py-2.5 text-sm font-medium text-(--color-muted)"
                   >
                     {p.name}
                   </span>
                 ))}
-              </ScrollCarousel>
+              </Marquee>
             </div>
           </div>
         </section>
@@ -136,50 +139,37 @@ export default async function HomePage() {
       </section>
 
       {mentors.length > 0 && (
-        <section className="border-t border-(--color-border) bg-(--color-surface) py-16">
-          <div className="mx-auto max-w-6xl px-4">
-            <h2 className="mb-8 text-2xl font-bold">Learn from industry mentors</h2>
-            <ScrollCarousel>
-              {mentors.map((m) => (
-                <div
-                  key={m.id}
-                  data-slide
-                  className="w-[230px] shrink-0 snap-start rounded-2xl border border-(--color-border) bg-(--background) p-5 sm:w-[260px]"
-                >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-(--color-primary) to-fuchsia-500 text-white">
-                    <PersonIcon className="h-6 w-6" />
-                  </div>
-                  <h3 className="mt-3 text-sm font-semibold">{m.name}</h3>
-                  <p className="text-xs text-(--color-muted)">
-                    {m.title}
-                    {m.company ? `, ${m.company}` : ""}
-                  </p>
-                  <p className="mt-2 text-xs text-(--color-muted)">{m.bio}</p>
-                </div>
-              ))}
-            </ScrollCarousel>
-          </div>
-        </section>
+        <Team
+          className="border-t border-(--color-border) bg-(--color-surface)"
+          members={mentors.map((m) => ({
+            name: m.name,
+            role: m.company ? `${m.title}, ${m.company}` : m.title,
+            image: m.photoUrl,
+          }))}
+        />
       )}
 
       {testimonials.length > 0 && (
         <section className="mx-auto max-w-6xl px-4 py-16">
           <h2 className="mb-8 text-2xl font-bold">What learners say</h2>
-          <ScrollCarousel>
-            {testimonials.map((t) => (
-              <figure
-                key={t.id}
-                data-slide
-                className="w-[280px] shrink-0 snap-start rounded-2xl border border-(--color-border) p-5 sm:w-[340px]"
-              >
-                <blockquote className="text-sm text-(--foreground)">&ldquo;{t.quote}&rdquo;</blockquote>
-                <figcaption className="mt-3 text-xs text-(--color-muted)">
-                  <span className="font-semibold text-(--foreground)">{t.name}</span>
-                  {t.role ? ` — ${t.role}` : ""}
-                </figcaption>
-              </figure>
-            ))}
-          </ScrollCarousel>
+          <div className="relative">
+            <div className="pointer-events-none absolute top-0 left-0 z-10 h-full w-16 bg-linear-to-r from-(--background) to-transparent" />
+            <div className="pointer-events-none absolute top-0 right-0 z-10 h-full w-16 bg-linear-to-l from-(--background) to-transparent" />
+            <Marquee className="[--duration:35s] [--gap:1.25rem]" pauseOnHover>
+              {testimonials.map((t) => (
+                <figure
+                  key={t.id}
+                  className="w-[280px] shrink-0 rounded-2xl border border-(--color-border) p-5 transition hover:-translate-y-0.5 hover:border-(--color-primary) hover:shadow-lg hover:shadow-(--color-primary)/10 sm:w-[340px]"
+                >
+                  <blockquote className="text-sm text-(--foreground)">&ldquo;{t.quote}&rdquo;</blockquote>
+                  <figcaption className="mt-3 text-xs text-(--color-muted)">
+                    <span className="font-semibold text-(--foreground)">{t.name}</span>
+                    {t.role ? ` — ${t.role}` : ""}
+                  </figcaption>
+                </figure>
+              ))}
+            </Marquee>
+          </div>
         </section>
       )}
 

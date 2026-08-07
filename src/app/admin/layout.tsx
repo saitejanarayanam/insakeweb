@@ -5,6 +5,7 @@ const ADMIN_NAV = [
   { href: "/admin/courses", label: "Courses" },
   { href: "/admin/blog", label: "Blog" },
   { href: "/admin/testimonials", label: "Testimonials" },
+  { href: "/admin/contact", label: "Contact Messages" },
   { href: "/admin/mentors", label: "Mentors" },
   { href: "/admin/partners", label: "Partners" },
   { href: "/admin/orders", label: "Orders" },

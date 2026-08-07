@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { prisma } from "@/lib/prisma";
@@ -32,7 +33,13 @@ export default async function BlogPostPage({
   if (!post) notFound();
 
   return (
-    <article className="mx-auto max-w-3xl px-4 py-12">
+    <article>
+      {post.coverImage && (
+        <div className="relative h-48 w-full overflow-hidden sm:h-64">
+          <Image src={post.coverImage} alt={post.title} fill priority className="object-cover" />
+        </div>
+      )}
+      <div className="mx-auto max-w-3xl px-4 py-12">
       <div className="flex flex-wrap items-center gap-2 text-xs text-(--color-muted)">
         {post.category && (
           <span className="rounded-full bg-(--color-surface) px-2.5 py-0.5 font-medium text-(--color-primary)">
@@ -71,6 +78,7 @@ export default async function BlogPostPage({
           </Link>
         </div>
       )}
+      </div>
     </article>
   );
 }

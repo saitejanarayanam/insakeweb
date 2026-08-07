@@ -45,11 +45,11 @@ export function CourseCard({ course }: { course: CourseCardData }) {
             {course.category.name}
           </span>
         )}
-        <h3 className="mt-2 text-base font-semibold">{course.title}</h3>
-        {course.tagline && (
-          <p className="mt-1 text-sm text-(--color-muted)">{course.tagline}</p>
-        )}
-        <div className="mt-3 flex items-center gap-3 text-xs text-(--color-muted)">
+        <h3 className="mt-2 line-clamp-1 text-base font-semibold">{course.title}</h3>
+        <p className="mt-1 line-clamp-2 min-h-[2.5rem] text-sm text-(--color-muted)">
+          {course.tagline}
+        </p>
+        <div className="mt-3 flex min-h-[1em] items-center gap-3 text-xs text-(--color-muted)">
           {course.studyHours && <span>{course.studyHours}h Study</span>}
           {course.difficulty && (
             <>

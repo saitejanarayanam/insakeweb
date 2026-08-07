@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2e1065"/>
+      <stop offset="100%" style="stop-color:#7c3aed"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:rgba(255,255,255,0.14)"/>
+      <stop offset="100%" style="stop-color:rgba(255,255,255,0.04)"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  </pattern>
+  <rect width="800" height="450" fill="url(#grid)"/>
+
+  <!-- Governance dashboard card -->
+  <rect x="440" y="100" width="280" height="200" rx="14" fill="url(#card)" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+  <rect x="460" y="120" width="110" height="8" rx="4" fill="rgba(255,255,255,0.35)"/>
+  <rect x="460" y="146" width="240" height="1" fill="rgba(255,255,255,0.15)"/>
+  <circle cx="500" cy="200" r="38" fill="none" stroke="#c4b5fd" stroke-width="10" stroke-dasharray="180 60"/>
+  <text x="500" y="207" text-anchor="middle" font-family="system-ui" font-size="20" font-weight="700" fill="white">75%</text>
+  <rect x="560" y="175" width="130" height="10" rx="5" fill="rgba(255,255,255,0.15)"/>
+  <rect x="560" y="175" width="95" height="10" rx="5" fill="#c4b5fd"/>
+  <rect x="560" y="200" width="130" height="10" rx="5" fill="rgba(255,255,255,0.15)"/>
+  <rect x="560" y="200" width="60" height="10" rx="5" fill="#a78bfa"/>
+  <rect x="560" y="225" width="130" height="10" rx="5" fill="rgba(255,255,255,0.15)"/>
+  <rect x="560" y="225" width="110" height="10" rx="5" fill="#ddd6fe"/>
+
+  <!-- Padlock, center-left -->
+  <g transform="translate(230 225)">
+    <circle r="95" fill="rgba(255,255,255,0.08)"/>
+    <rect x="-40" y="-10" width="80" height="66" rx="12" fill="rgba(255,255,255,0.18)" stroke="rgba(255,255,255,0.45)" stroke-width="3"/>
+    <path d="M-24 -10V-32C-24 -54 -6 -68 0 -68S24 -54 24 -32V-10" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="8" stroke-linecap="round"/>
+    <circle cx="0" cy="22" r="9" fill="#ddd6fe"/>
+    <rect x="-4" y="26" width="8" height="16" rx="4" fill="#ddd6fe"/>
+  </g>
+
+  <g fill="#ffffff" opacity="0.55">
+    <path d="M110 110 114 120 124 124 114 128 110 138 106 128 96 124 106 120Z"/>
+    <path d="M690 340 693 348 701 351 693 354 690 362 687 354 679 351 687 348Z"/>
+  </g>
+</svg>

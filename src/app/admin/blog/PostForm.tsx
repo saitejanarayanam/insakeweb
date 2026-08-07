@@ -43,6 +43,17 @@ export function PostForm({
       </div>
 
       <div>
+        <label className="text-sm font-medium">Cover image URL</label>
+        <input
+          name="coverImage"
+          type="url"
+          placeholder="https://…"
+          defaultValue={post?.coverImage ?? ""}
+          className="mt-1 w-full rounded-lg border border-(--color-border) bg-(--background) px-3 py-2 text-sm outline-none focus:border-(--color-primary)"
+        />
+      </div>
+
+      <div>
         <label className="text-sm font-medium">Content (markdown-ish)</label>
         <textarea
           name="content"

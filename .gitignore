@@ -51,3 +51,6 @@ next-env.d.ts
 /.windsurf/
 /.claude/skills/
 skills-lock.json
+
+# Supabase CLI local project link (machine-specific, not app code)
+/supabase/.temp/

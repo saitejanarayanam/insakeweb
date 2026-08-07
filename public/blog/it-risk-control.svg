@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#78350f"/>
+      <stop offset="100%" style="stop-color:#d97706"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:rgba(255,255,255,0.14)"/>
+      <stop offset="100%" style="stop-color:rgba(255,255,255,0.04)"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  </pattern>
+  <rect width="800" height="450" fill="url(#grid)"/>
+
+  <!-- Risk heat-map card -->
+  <rect x="470" y="90" width="250" height="200" rx="14" fill="url(#card)" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+  <rect x="490" y="110" width="90" height="8" rx="4" fill="rgba(255,255,255,0.35)"/>
+  <g>
+    <rect x="490" y="140" width="50" height="34" rx="6" fill="#fca5a5" opacity="0.85"/>
+    <rect x="546" y="140" width="50" height="34" rx="6" fill="#fdba74" opacity="0.85"/>
+    <rect x="602" y="140" width="50" height="34" rx="6" fill="#fde68a" opacity="0.85"/>
+    <rect x="490" y="180" width="50" height="34" rx="6" fill="#fdba74" opacity="0.75"/>
+    <rect x="546" y="180" width="50" height="34" rx="6" fill="#fde68a" opacity="0.75"/>
+    <rect x="602" y="180" width="50" height="34" rx="6" fill="#bbf7d0" opacity="0.75"/>
+    <rect x="490" y="220" width="50" height="34" rx="6" fill="#fde68a" opacity="0.65"/>
+    <rect x="546" y="220" width="50" height="34" rx="6" fill="#bbf7d0" opacity="0.65"/>
+    <rect x="602" y="220" width="50" height="34" rx="6" fill="#bbf7d0" opacity="0.65"/>
+  </g>
+
+  <!-- Shield with checkmark, center-left -->
+  <g transform="translate(230 225)">
+    <circle r="95" fill="rgba(255,255,255,0.08)"/>
+    <path d="M0 -60 46 -38V6C46 46 24 72 0 82 -24 72 -46 46 -46 6V-38Z" fill="rgba(255,255,255,0.16)" stroke="rgba(255,255,255,0.4)" stroke-width="3"/>
+    <path d="M-20 0 -6 16 24 -20" fill="none" stroke="#fde68a" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+
+  <!-- Decorative sparkles -->
+  <g fill="#ffffff" opacity="0.6">
+    <path d="M120 90 124 100 134 104 124 108 120 118 116 108 106 104 116 100Z"/>
+    <path d="M700 350 703 358 711 361 703 364 700 372 697 364 689 361 697 358Z"/>
+  </g>
+</svg>

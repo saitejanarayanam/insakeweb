@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#831843"/>
+      <stop offset="100%" style="stop-color:#db2777"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:rgba(255,255,255,0.14)"/>
+      <stop offset="100%" style="stop-color:rgba(255,255,255,0.04)"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  </pattern>
+  <rect width="800" height="450" fill="url(#grid)"/>
+
+  <!-- Network / node diagram card -->
+  <rect x="440" y="90" width="280" height="270" rx="14" fill="url(#card)" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+  <g stroke="rgba(255,255,255,0.35)" stroke-width="2">
+    <line x1="490" y1="150" x2="560" y2="200"/>
+    <line x1="650" y1="140" x2="560" y2="200"/>
+    <line x1="560" y1="200" x2="520" y2="280"/>
+    <line x1="560" y1="200" x2="640" y2="290"/>
+    <line x1="490" y1="150" x2="650" y2="140"/>
+  </g>
+  <circle cx="490" cy="150" r="14" fill="#f9a8d4"/>
+  <circle cx="650" cy="140" r="14" fill="#f9a8d4"/>
+  <circle cx="560" cy="200" r="20" fill="#fbcfe8"/>
+  <circle cx="520" cy="280" r="14" fill="#f9a8d4"/>
+  <circle cx="640" cy="290" r="14" fill="#f9a8d4"/>
+
+  <!-- Rocket / spark badge, center-left -->
+  <g transform="translate(230 225)">
+    <circle r="95" fill="rgba(255,255,255,0.08)"/>
+    <path d="M0 -55C24 -35 30 -5 14 25L-14 25C-30 -5 -24 -35 0 -55Z" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.45)" stroke-width="3"/>
+    <circle cx="0" cy="-25" r="9" fill="#fbcfe8"/>
+    <path d="M-14 25 -26 48 -4 34Z" fill="rgba(255,255,255,0.35)"/>
+    <path d="M14 25 26 48 4 34Z" fill="rgba(255,255,255,0.35)"/>
+    <path d="M-6 40 0 62 6 40Z" fill="#f9a8d4"/>
+  </g>
+
+  <g fill="#ffffff" opacity="0.55">
+    <path d="M120 100 124 110 134 114 124 118 120 128 116 118 106 114 116 110Z"/>
+    <path d="M700 370 703 378 711 381 703 384 700 392 697 384 689 381 697 378Z"/>
+  </g>
+</svg>

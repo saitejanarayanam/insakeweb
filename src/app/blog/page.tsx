@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 import { prisma } from "@/lib/prisma";
 import { PageHero } from "@/components/PageHero";
@@ -66,8 +67,22 @@ export default async function BlogPage({
             <Link
               key={post.id}
               href={`/blog/${post.slug}`}
-              className="flex flex-col rounded-2xl border border-(--color-border) p-5 transition hover:border-(--color-primary) hover:shadow-lg hover:shadow-(--color-primary)/10"
+              className="flex flex-col overflow-hidden rounded-2xl border border-(--color-border) transition hover:border-(--color-primary) hover:shadow-lg hover:shadow-(--color-primary)/10"
             >
+              <div className="relative aspect-[21/9] w-full shrink-0 overflow-hidden bg-(--color-surface)">
+                {post.coverImage ? (
+                  <Image
+                    src={post.coverImage}
+                    alt={post.title}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
+                ) : (
+                  <div className="h-full w-full bg-(--color-surface)" />
+                )}
+              </div>
+              <div className="flex flex-1 flex-col p-5">
               <div className="flex flex-wrap items-center gap-2 text-xs text-(--color-muted)">
                 {post.category && (
                   <span className="rounded-full bg-(--color-surface) px-2.5 py-0.5 font-medium text-(--color-primary)">
@@ -85,6 +100,7 @@ export default async function BlogPage({
                   month: "short",
                   day: "numeric",
                 })}
+              </div>
               </div>
             </Link>
           ))}

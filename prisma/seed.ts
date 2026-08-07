@@ -1,6 +1,7 @@
 import { PrismaClient } from "../src/generated/prisma/client";
 import { PrismaPg } from "@prisma/adapter-pg";
 import bcrypt from "bcryptjs";
+import { COURSE_CONTENT } from "./course-content";
 
 const adapter = new PrismaPg({ connectionString: process.env.DATABASE_URL });
 const prisma = new PrismaClient({ adapter });
@@ -91,8 +92,8 @@ async function main() {
         slug: c.slug,
         title: c.title,
         tagline: c.tagline,
-        description: `${c.title} is designed to build job-ready, practical skills through expert-led instruction and real-world projects. This is placeholder copy — replace with the final course description.`,
-        syllabus: `## What you'll learn\n\n- Module 1: Foundations\n- Module 2: Core concepts\n- Module 3: Applied projects\n- Module 4: Exam/certification prep\n\n(Placeholder syllabus — replace with the final curriculum.)`,
+        description: COURSE_CONTENT[c.slug].description,
+        syllabus: COURSE_CONTENT[c.slug].syllabus,
         price: c.price,
         studyHours: c.hours,
         difficulty: c.difficulty,
