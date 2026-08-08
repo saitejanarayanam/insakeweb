@@ -82,6 +82,7 @@ export default function CheckoutPage() {
 
   return (
     <div>
+      <meta name="robots" content="noindex, nofollow" />
       <Script
         src="https://checkout.razorpay.com/v1/checkout.js"
         onLoad={() => setScriptReady(true)}

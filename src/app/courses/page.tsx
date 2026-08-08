@@ -8,6 +8,7 @@ import { StatsRow } from "@/components/StatsRow";
 export const metadata: Metadata = {
   title: "Courses",
   description: "Browse certification, finance & analytics, and career-skills courses.",
+  alternates: { canonical: "/courses" },
 };
 
 const STATS = [

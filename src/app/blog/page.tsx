@@ -7,6 +7,7 @@ import { PageHero } from "@/components/PageHero";
 export const metadata: Metadata = {
   title: "Blog",
   description: "Certification guides, exam prep tips, and career advice from inSAKE.",
+  alternates: { canonical: "/blog" },
 };
 
 export default async function BlogPage({

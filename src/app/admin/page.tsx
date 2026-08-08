@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { prisma } from "@/lib/prisma";
 import { formatINR } from "@/lib/format";
 
-export const metadata: Metadata = { title: "Admin" };
+export const metadata: Metadata = { title: "Admin", robots: { index: false, follow: false } };
 
 export default async function AdminOverviewPage() {
   const [courseCount, postCount, userCount, activeUserCount, orders] = await Promise.all([

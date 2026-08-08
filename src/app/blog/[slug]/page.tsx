@@ -4,6 +4,9 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { prisma } from "@/lib/prisma";
 import { SimpleMarkdown } from "@/components/SimpleMarkdown";
+import { JsonLd } from "@/components/JsonLd";
+
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 
 async function getPost(slug: string) {
   return prisma.blogPost.findUnique({
@@ -20,7 +23,25 @@ export async function generateMetadata({
   const { slug } = await params;
   const post = await getPost(slug);
   if (!post) return {};
-  return { title: post.title, description: post.excerpt };
+  return {
+    title: post.title,
+    description: post.excerpt,
+    alternates: { canonical: `/blog/${post.slug}` },
+    openGraph: {
+      title: post.title,
+      description: post.excerpt,
+      type: "article",
+      url: `/blog/${post.slug}`,
+      publishedTime: post.publishedAt.toISOString(),
+      images: post.coverImage ? [{ url: post.coverImage }] : undefined,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.excerpt,
+      images: post.coverImage ? [post.coverImage] : undefined,
+    },
+  };
 }
 
 export default async function BlogPostPage({
@@ -32,8 +53,41 @@ export default async function BlogPostPage({
   const post = await getPost(slug);
   if (!post) notFound();
 
+  const postUrl = `${BASE_URL}/blog/${post.slug}`;
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    headline: post.title,
+    description: post.excerpt,
+    url: postUrl,
+    datePublished: post.publishedAt.toISOString(),
+    dateModified: post.publishedAt.toISOString(),
+    ...(post.coverImage
+      ? { image: post.coverImage.startsWith("http") ? post.coverImage : `${BASE_URL}${post.coverImage}` }
+      : {}),
+    author: { "@type": "Organization", name: "inSAKE Academy" },
+    publisher: {
+      "@type": "Organization",
+      name: "inSAKE Academy",
+      logo: { "@type": "ImageObject", url: `${BASE_URL}/insake-logo.png` },
+    },
+    mainEntityOfPage: { "@type": "WebPage", "@id": postUrl },
+  };
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: BASE_URL },
+      { "@type": "ListItem", position: 2, name: "Blog", item: `${BASE_URL}/blog` },
+      { "@type": "ListItem", position: 3, name: post.title, item: postUrl },
+    ],
+  };
+
   return (
     <article>
+      <JsonLd data={articleJsonLd} />
+      <JsonLd data={breadcrumbJsonLd} />
       {post.coverImage && (
         <div className="relative h-48 w-full overflow-hidden sm:h-64">
           <Image src={post.coverImage} alt={post.title} fill priority className="object-cover" />

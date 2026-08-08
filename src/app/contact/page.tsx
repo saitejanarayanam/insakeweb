@@ -6,6 +6,7 @@ import { submitContactMessage } from "./actions";
 export const metadata: Metadata = {
   title: "Contact",
   description: "Get in touch with the inSAKE team.",
+  alternates: { canonical: "/contact" },
 };
 
 const OFFICES = [

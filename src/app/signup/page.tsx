@@ -45,6 +45,7 @@ export default function SignupPage() {
 
   return (
     <div>
+      <meta name="robots" content="noindex, nofollow" />
       <PageHero eyebrow="Get started" title="Create your account" />
       <div className="mx-auto max-w-md px-4 py-12">
         <form onSubmit={handleSubmit} className="space-y-4 rounded-2xl border border-(--color-border) p-6">

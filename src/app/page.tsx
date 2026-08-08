@@ -1,4 +1,5 @@
 import Link from "next/link";
+import type { Metadata } from "next";
 import { prisma } from "@/lib/prisma";
 import { CourseCard } from "@/components/CourseCard";
 import { HeroIllustration } from "@/components/HeroIllustration";
@@ -7,6 +8,10 @@ import { PersonIcon } from "@/components/icons/PersonIcon";
 import { ScrollCarousel } from "@/components/ScrollCarousel";
 import { Marquee } from "@/components/ui/marquee";
 import Team from "@/components/ui/team";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 export default async function HomePage() {
   const [featuredCourses, partners, mentors, testimonials] = await Promise.all([

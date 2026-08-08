@@ -5,6 +5,9 @@ import { prisma } from "@/lib/prisma";
 import { formatINR } from "@/lib/format";
 import { AddToCartButton } from "@/components/AddToCartButton";
 import { SimpleMarkdown } from "@/components/SimpleMarkdown";
+import { JsonLd } from "@/components/JsonLd";
+
+const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 
 async function getCourse(slug: string) {
   return prisma.course.findUnique({
@@ -21,9 +24,24 @@ export async function generateMetadata({
   const { slug } = await params;
   const course = await getCourse(slug);
   if (!course) return {};
+  const description = course.tagline ?? course.description.slice(0, 150);
   return {
     title: course.title,
-    description: course.tagline ?? course.description.slice(0, 150),
+    description,
+    alternates: { canonical: `/courses/${course.slug}` },
+    openGraph: {
+      title: course.title,
+      description,
+      type: "website",
+      url: `/courses/${course.slug}`,
+      images: course.imageUrl ? [{ url: course.imageUrl }] : undefined,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: course.title,
+      description,
+      images: course.imageUrl ? [course.imageUrl] : undefined,
+    },
   };
 }
 
@@ -36,8 +54,45 @@ export default async function CourseDetailPage({
   const course = await getCourse(slug);
   if (!course) notFound();
 
+  const courseUrl = `${BASE_URL}/courses/${course.slug}`;
+  const courseJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    name: course.title,
+    description: course.description,
+    url: courseUrl,
+    ...(course.imageUrl
+      ? { image: course.imageUrl.startsWith("http") ? course.imageUrl : `${BASE_URL}${course.imageUrl}` }
+      : {}),
+    provider: {
+      "@type": "Organization",
+      name: "inSAKE Academy",
+      url: BASE_URL,
+    },
+    ...(course.difficulty ? { educationalLevel: course.difficulty } : {}),
+    offers: {
+      "@type": "Offer",
+      price: (course.price / 100).toString(),
+      priceCurrency: "INR",
+      availability: "https://schema.org/InStock",
+      url: courseUrl,
+    },
+  };
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: BASE_URL },
+      { "@type": "ListItem", position: 2, name: "Courses", item: `${BASE_URL}/courses` },
+      { "@type": "ListItem", position: 3, name: course.title, item: courseUrl },
+    ],
+  };
+
   return (
     <div>
+      <JsonLd data={courseJsonLd} />
+      <JsonLd data={breadcrumbJsonLd} />
       {/* Hero image banner */}
       <div className="relative h-40 w-full overflow-hidden sm:h-48 md:h-56">
         {course.imageUrl ? (

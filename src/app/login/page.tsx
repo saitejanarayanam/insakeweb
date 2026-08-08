@@ -74,6 +74,7 @@ function LoginForm() {
 export default function LoginPage() {
   return (
     <div>
+      <meta name="robots" content="noindex, nofollow" />
       <PageHero eyebrow="Welcome back" title="Log in" />
       <div className="mx-auto max-w-md px-4 py-12">
         <Suspense>

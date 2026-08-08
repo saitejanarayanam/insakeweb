@@ -9,6 +9,7 @@ import { PersonIcon } from "@/components/icons/PersonIcon";
 export const metadata: Metadata = {
   title: "About",
   description: "About inSAKE — our mission, values, and mentors.",
+  alternates: { canonical: "/about" },
 };
 
 const IMPACT_STATS = [

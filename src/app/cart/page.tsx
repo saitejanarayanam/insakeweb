@@ -13,6 +13,7 @@ export default function CartPage() {
 
   return (
     <div>
+      <meta name="robots" content="noindex, nofollow" />
       <PageHero eyebrow="Your cart" title="Cart" />
 
       <div className="mx-auto max-w-3xl px-4 py-12">

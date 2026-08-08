@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Providers } from "@/components/Providers";
 import { ConditionalChrome } from "@/components/ConditionalChrome";
+import { JsonLd } from "@/components/JsonLd";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -39,6 +40,33 @@ export const metadata: Metadata = {
   },
 };
 
+const ORGANIZATION_JSON_LD = {
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  name: "inSAKE Academy",
+  url: BASE_URL,
+  logo: `${BASE_URL}/insake-logo.png`,
+  description:
+    "inSAKE offers expert-led certification courses, finance & analytics training, and career-skills programs to help you build real-world, job-ready skills.",
+  address: [
+    {
+      "@type": "PostalAddress",
+      streetAddress: "House No. 02, Ground floor, Borewell Rd, Whitefield",
+      addressLocality: "Bengaluru",
+      addressRegion: "Karnataka",
+      postalCode: "560066",
+      addressCountry: "IN",
+    },
+    {
+      "@type": "PostalAddress",
+      streetAddress: "213 Decatur Ln",
+      addressRegion: "GA",
+      postalCode: "30033",
+      addressCountry: "US",
+    },
+  ],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -50,6 +78,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">
+        <JsonLd data={ORGANIZATION_JSON_LD} />
         <Providers>
           <ConditionalChrome>{children}</ConditionalChrome>
         </Providers>
