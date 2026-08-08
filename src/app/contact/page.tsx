@@ -39,7 +39,7 @@ export default async function ContactPage({
         description="Have a question or want to enroll? We'd love to hear from you. Reach out via WhatsApp, email, or the form below."
       />
 
-      <div className="mx-auto max-w-4xl px-4 py-12">
+      <div className="mx-auto max-w-5xl px-4 py-12">
         <div className="grid gap-5 sm:grid-cols-2">
           <a
             href="https://wa.me/919989569893"

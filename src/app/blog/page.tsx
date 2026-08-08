@@ -36,7 +36,7 @@ export default async function BlogPage({
         description="Expert articles on cybersecurity, certifications, finance, and career growth."
       />
 
-      <div className="mx-auto max-w-6xl px-4 py-12">
+      <div className="mx-auto max-w-7xl px-4 py-12">
         <div className="flex flex-wrap gap-2">
           <Link
             href="/blog"

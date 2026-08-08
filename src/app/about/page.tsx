@@ -82,7 +82,7 @@ export default async function AboutPage() {
       </PageHero>
 
       <section className="border-b border-(--color-border) bg-(--color-surface) py-14">
-        <div className="mx-auto max-w-5xl px-4 text-center">
+        <div className="mx-auto max-w-6xl px-4 text-center">
           <span className="text-xs font-semibold uppercase tracking-wide text-(--color-primary)">
             Technology Partners
           </span>
@@ -104,7 +104,7 @@ export default async function AboutPage() {
         </div>
       </section>
 
-      <div className="mx-auto max-w-5xl px-4 py-14">
+      <div className="mx-auto max-w-6xl px-4 py-14">
         <section>
           <h2 className="text-xl font-bold">Who We Are</h2>
           <p className="mt-3 max-w-3xl text-sm text-(--color-muted)">
@@ -147,7 +147,7 @@ export default async function AboutPage() {
       </div>
 
       <section className="bg-grid border-y border-(--color-ink-border) bg-(--color-ink) py-14 text-(--color-ink-foreground)">
-        <div className="mx-auto max-w-5xl px-4">
+        <div className="mx-auto max-w-6xl px-4">
           <div className="text-center">
             <span className="text-xs font-semibold uppercase tracking-wide text-(--color-primary)">
               Our Impact
@@ -211,7 +211,7 @@ export default async function AboutPage() {
       </section>
 
       <section className="border-t border-(--color-border) bg-(--color-surface) py-14">
-        <div className="mx-auto max-w-4xl px-4 text-center">
+        <div className="mx-auto max-w-5xl px-4 text-center">
           <span className="text-xs font-semibold uppercase tracking-wide text-(--color-primary)">
             Global Presence
           </span>

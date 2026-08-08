@@ -3,7 +3,7 @@ import Link from "next/link";
 export function Footer() {
   return (
     <footer className="mt-auto border-t border-(--color-ink-border) bg-(--color-ink) text-(--color-ink-foreground)">
-      <div className="mx-auto max-w-6xl px-4 py-12">
+      <div className="mx-auto max-w-7xl px-4 py-12">
         <div className="flex flex-col items-start justify-between gap-6 border-b border-(--color-ink-border) pb-8 sm:flex-row sm:items-center">
           <p className="max-w-xl text-sm text-(--color-ink-muted)">
             The enterprise-grade platform for professional certification, upskilling, and

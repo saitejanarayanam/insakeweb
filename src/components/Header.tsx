@@ -20,7 +20,7 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-(--color-border) bg-(--background)/90 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3">
         <Link href="/" className="flex items-center gap-2 text-lg font-bold tracking-tight">
           <Image src="/insake-logo.png" alt="inSAKE" width={32} height={32} className="h-8 w-8" priority />
           <span>inSAKE</span>

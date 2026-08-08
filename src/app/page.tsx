@@ -41,7 +41,7 @@ export default async function HomePage() {
     <div>
       <section className="bg-grid relative overflow-hidden border-b border-(--color-ink-border) bg-(--color-ink) text-(--color-ink-foreground)">
         <div className="pointer-events-none absolute -top-24 left-1/2 h-72 w-72 -translate-x-1/2 rounded-full bg-(--color-primary)/20 blur-3xl" />
-        <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-4 py-10 lg:grid-cols-2 lg:py-14">
+        <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-4 py-10 lg:grid-cols-2 lg:py-14">
           <div className="text-center lg:text-left">
             <span className="inline-flex items-center gap-2 rounded-full border border-(--color-ink-border) bg-(--color-ink-surface) px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-(--color-primary)">
               Enterprise-grade certification platform
@@ -97,7 +97,7 @@ export default async function HomePage() {
         </div>
 
         <div className="relative border-t border-(--color-ink-border) py-8">
-          <div className="mx-auto max-w-6xl px-4">
+          <div className="mx-auto max-w-7xl px-4">
             <TrustBadges />
           </div>
         </div>
@@ -105,7 +105,7 @@ export default async function HomePage() {
 
       {partners.length > 0 && (
         <section className="border-b border-(--color-border) py-10">
-          <div className="mx-auto max-w-6xl px-4">
+          <div className="mx-auto max-w-7xl px-4">
             <p className="text-center text-xs font-semibold uppercase tracking-wide text-(--color-muted)">
               Trusted by learners from
             </p>
@@ -127,7 +127,7 @@ export default async function HomePage() {
         </section>
       )}
 
-      <section className="mx-auto max-w-6xl px-4 py-16">
+      <section className="mx-auto max-w-7xl px-4 py-16">
         <div className="mb-8 flex items-end justify-between">
           <h2 className="text-2xl font-bold">Featured courses</h2>
           <Link href="/courses" className="text-sm font-medium text-(--color-primary)">
@@ -155,7 +155,7 @@ export default async function HomePage() {
       )}
 
       {testimonials.length > 0 && (
-        <section className="mx-auto max-w-6xl px-4 py-16">
+        <section className="mx-auto max-w-7xl px-4 py-16">
           <h2 className="mb-8 text-2xl font-bold">What learners say</h2>
           <div className="relative">
             <div className="pointer-events-none absolute top-0 left-0 z-10 h-full w-16 bg-linear-to-r from-(--background) to-transparent" />
@@ -179,7 +179,7 @@ export default async function HomePage() {
       )}
 
       <section className="bg-grid relative overflow-hidden border-y border-(--color-ink-border) bg-(--color-ink) py-16 text-(--color-ink-foreground)">
-        <div className="relative mx-auto max-w-6xl px-4 text-center">
+        <div className="relative mx-auto max-w-7xl px-4 text-center">
           <h2 className="text-2xl font-bold">Ready to get started?</h2>
           <p className="mt-2 text-(--color-ink-muted)">
             Browse our full catalog and find the course that fits your career goals.
