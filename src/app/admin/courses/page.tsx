@@ -3,8 +3,15 @@ import { prisma } from "@/lib/prisma";
 import { formatINR } from "@/lib/format";
 import { deleteCourse } from "./actions";
 import { AdminSearchBox } from "@/components/admin/AdminSearchBox";
+import { ConfirmDeleteButton } from "@/components/admin/ConfirmDeleteButton";
+import { SavedBanner } from "@/components/admin/SavedBanner";
 
-export default async function AdminCoursesPage() {
+export default async function AdminCoursesPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ saved?: string }>;
+}) {
+  const { saved } = await searchParams;
   const courses = await prisma.course.findMany({
     include: { category: true },
     orderBy: { createdAt: "desc" },
@@ -12,6 +19,7 @@ export default async function AdminCoursesPage() {
 
   return (
     <div>
+      <SavedBanner show={saved === "1"} />
       <div className="flex items-center justify-between">
         <h1 className="text-2xl font-bold">Courses</h1>
         <Link
@@ -48,9 +56,10 @@ export default async function AdminCoursesPage() {
                       Edit
                     </Link>
                     <form action={deleteCourse.bind(null, c.id)}>
-                      <button type="submit" className="text-red-500 hover:underline">
-                        Delete
-                      </button>
+                      <ConfirmDeleteButton
+                        confirmMessage={`Delete "${c.title}"? This can't be undone.`}
+                        className="text-red-500 hover:underline"
+                      />
                     </form>
                   </div>
                 </td>

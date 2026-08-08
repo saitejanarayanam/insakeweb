@@ -2,12 +2,20 @@ import Link from "next/link";
 import { prisma } from "@/lib/prisma";
 import { deletePost } from "./actions";
 import { AdminSearchBox } from "@/components/admin/AdminSearchBox";
+import { ConfirmDeleteButton } from "@/components/admin/ConfirmDeleteButton";
+import { SavedBanner } from "@/components/admin/SavedBanner";
 
-export default async function AdminBlogPage() {
+export default async function AdminBlogPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ saved?: string }>;
+}) {
+  const { saved } = await searchParams;
   const posts = await prisma.blogPost.findMany({ orderBy: { publishedAt: "desc" } });
 
   return (
     <div>
+      <SavedBanner show={saved === "1"} />
       <div className="flex items-center justify-between">
         <h1 className="text-2xl font-bold">Blog posts</h1>
         <Link
@@ -40,9 +48,10 @@ export default async function AdminBlogPage() {
                       Edit
                     </Link>
                     <form action={deletePost.bind(null, p.id)}>
-                      <button type="submit" className="text-red-500 hover:underline">
-                        Delete
-                      </button>
+                      <ConfirmDeleteButton
+                        confirmMessage={`Delete "${p.title}"? This can't be undone.`}
+                        className="text-red-500 hover:underline"
+                      />
                     </form>
                   </div>
                 </td>

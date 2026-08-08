@@ -2,27 +2,37 @@ import Link from "next/link";
 import { prisma } from "@/lib/prisma";
 import { createPartner, deletePartner } from "./actions";
 import { AdminSearchBox } from "@/components/admin/AdminSearchBox";
+import { ConfirmDeleteButton } from "@/components/admin/ConfirmDeleteButton";
+import { SavedBanner } from "@/components/admin/SavedBanner";
+import { SubmitButton } from "@/components/admin/SubmitButton";
 
-export default async function AdminPartnersPage() {
+export default async function AdminPartnersPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ saved?: string }>;
+}) {
+  const { saved } = await searchParams;
   const partners = await prisma.partnerInstitution.findMany({ orderBy: { order: "asc" } });
 
   return (
     <div>
+      <SavedBanner show={saved === "1"} />
       <h1 className="text-2xl font-bold">Partner institutions</h1>
 
       <form action={createPartner} className="mt-6 flex max-w-lg gap-3">
+        <label htmlFor="partner-name" className="sr-only">
+          Institution name
+        </label>
         <input
+          id="partner-name"
           name="name"
           placeholder="Institution name"
           required
           className="flex-1 rounded-lg border border-(--color-border) bg-(--background) px-3 py-2 text-sm outline-none focus:border-(--color-primary)"
         />
-        <button
-          type="submit"
-          className="rounded-full bg-(--color-primary) px-5 py-2 text-sm font-semibold text-white hover:bg-(--color-primary-dark)"
-        >
+        <SubmitButton className="rounded-full bg-(--color-primary) px-5 py-2 text-sm font-semibold text-white hover:bg-(--color-primary-dark)">
           Add
-        </button>
+        </SubmitButton>
       </form>
 
       <AdminSearchBox scope="partners" placeholder="Search partners..." />
@@ -39,9 +49,12 @@ export default async function AdminPartnersPage() {
               Edit
             </Link>
             <form action={deletePartner.bind(null, p.id)}>
-              <button type="submit" className="text-(--color-muted) hover:text-red-500">
+              <ConfirmDeleteButton
+                confirmMessage={`Remove partner "${p.name}"?`}
+                className="text-(--color-muted) hover:text-red-500"
+              >
                 ×
-              </button>
+              </ConfirmDeleteButton>
             </form>
           </div>
         ))}

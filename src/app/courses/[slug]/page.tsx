@@ -100,6 +100,7 @@ export default async function CourseDetailPage({
               slug={course.slug}
               title={course.title}
               price={course.price}
+              imageUrl={course.imageUrl}
             />
           </div>
         </div>

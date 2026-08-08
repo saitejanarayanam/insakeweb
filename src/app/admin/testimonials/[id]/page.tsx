@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { prisma } from "@/lib/prisma";
 import { updateTestimonial } from "../actions";
+import { SubmitButton } from "@/components/admin/SubmitButton";
 
 export default async function EditTestimonialPage({
   params,
@@ -20,34 +21,37 @@ export default async function EditTestimonialPage({
         className="mt-6 max-w-lg space-y-3 rounded-2xl border border-(--color-border) p-5"
       >
         <div className="grid gap-3 sm:grid-cols-2">
-          <input
-            name="name"
-            placeholder="Name"
-            defaultValue={testimonial.name}
+          <div>
+            <label className="text-sm font-medium">Name</label>
+            <input
+              name="name"
+              defaultValue={testimonial.name}
+              required
+              className="mt-1 w-full rounded-lg border border-(--color-border) bg-(--background) px-3 py-2 text-sm outline-none focus:border-(--color-primary)"
+            />
+          </div>
+          <div>
+            <label className="text-sm font-medium">Role (optional)</label>
+            <input
+              name="role"
+              defaultValue={testimonial.role ?? ""}
+              className="mt-1 w-full rounded-lg border border-(--color-border) bg-(--background) px-3 py-2 text-sm outline-none focus:border-(--color-primary)"
+            />
+          </div>
+        </div>
+        <div>
+          <label className="text-sm font-medium">Quote</label>
+          <textarea
+            name="quote"
+            defaultValue={testimonial.quote}
             required
-            className="rounded-lg border border-(--color-border) bg-(--background) px-3 py-2 text-sm outline-none focus:border-(--color-primary)"
-          />
-          <input
-            name="role"
-            placeholder="Role (optional)"
-            defaultValue={testimonial.role ?? ""}
-            className="rounded-lg border border-(--color-border) bg-(--background) px-3 py-2 text-sm outline-none focus:border-(--color-primary)"
+            rows={3}
+            className="mt-1 w-full rounded-lg border border-(--color-border) bg-(--background) px-3 py-2 text-sm outline-none focus:border-(--color-primary)"
           />
         </div>
-        <textarea
-          name="quote"
-          placeholder="Quote"
-          defaultValue={testimonial.quote}
-          required
-          rows={3}
-          className="w-full rounded-lg border border-(--color-border) bg-(--background) px-3 py-2 text-sm outline-none focus:border-(--color-primary)"
-        />
-        <button
-          type="submit"
-          className="rounded-full bg-(--color-primary) px-5 py-2 text-sm font-semibold text-white hover:bg-(--color-primary-dark)"
-        >
+        <SubmitButton className="rounded-full bg-(--color-primary) px-5 py-2 text-sm font-semibold text-white hover:bg-(--color-primary-dark)">
           Save changes
-        </button>
+        </SubmitButton>
       </form>
     </div>
   );

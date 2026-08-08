@@ -20,8 +20,8 @@ const IMPACT_STATS = [
 const NUMBERS_STATS = [
   { value: "5+", label: "Countries" },
   { value: "100+", label: "Global Clients" },
-  { value: "500+", label: "Students Placed" },
-  { value: "50+", label: "Partner Companies" },
+  { value: "10,000+", label: "Students Trained" },
+  { value: "100+", label: "Partner Companies" },
 ];
 
 const TECH_PARTNERS = [

@@ -8,11 +8,13 @@ export function AddToCartButton({
   slug,
   title,
   price,
+  imageUrl,
 }: {
   courseId: string;
   slug: string;
   title: string;
   price: number;
+  imageUrl?: string | null;
 }) {
   const router = useRouter();
   const items = useCartStore((s) => s.items);
@@ -22,7 +24,7 @@ export function AddToCartButton({
   return (
     <div className="flex gap-3">
       <button
-        onClick={() => addItem({ courseId, slug, title, price })}
+        onClick={() => addItem({ courseId, slug, title, price, imageUrl })}
         disabled={inCart}
         className="rounded-full bg-(--color-primary) px-6 py-3 text-sm font-semibold text-white shadow-md shadow-(--color-primary)/30 hover:bg-(--color-primary-dark) disabled:cursor-not-allowed disabled:opacity-60"
       >

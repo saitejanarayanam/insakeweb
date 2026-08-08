@@ -17,6 +17,7 @@ export async function createMentor(formData: FormData) {
   revalidatePath("/admin/mentors");
   revalidatePath("/");
   revalidatePath("/about");
+  redirect("/admin/mentors?saved=1");
 }
 
 export async function updateMentor(id: string, formData: FormData) {
@@ -33,7 +34,7 @@ export async function updateMentor(id: string, formData: FormData) {
   revalidatePath("/admin/mentors");
   revalidatePath("/");
   revalidatePath("/about");
-  redirect("/admin/mentors");
+  redirect("/admin/mentors?saved=1");
 }
 
 export async function deleteMentor(id: string) {

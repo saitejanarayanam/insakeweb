@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0c4a6e"/>
+      <stop offset="100%" style="stop-color:#0891b2"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:rgba(255,255,255,0.14)"/>
+      <stop offset="100%" style="stop-color:rgba(255,255,255,0.04)"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  </pattern>
+  <rect width="800" height="450" fill="url(#grid)"/>
+
+  <!-- Binary rain, subtle -->
+  <g font-family="monospace" font-size="12" fill="rgba(165,243,252,0.18)">
+    <text x="120" y="90">01001</text>
+    <text x="640" y="110">10110</text>
+    <text x="60" y="330">11010</text>
+    <text x="690" y="300">00101</text>
+    <text x="150" y="360">01100</text>
+  </g>
+
+  <!-- Central lock shield -->
+  <path d="M400 85 L515 122 V220 C515 305 465 355 400 382 C335 355 285 305 285 220 V122 Z"
+        fill="url(#card)" stroke="rgba(165,243,252,0.5)" stroke-width="2.5"/>
+  <rect x="368" y="210" width="64" height="52" rx="8" fill="rgba(8,145,178,0.5)" stroke="#a5f3fc" stroke-width="2"/>
+  <path d="M382 210 V190 a18 18 0 0 1 36 0 V210" fill="none" stroke="#a5f3fc" stroke-width="6"/>
+  <circle cx="400" cy="232" r="7" fill="#083344"/>
+  <rect x="397" y="236" width="6" height="14" rx="2" fill="#083344"/>
+
+  <!-- Circuit lines connecting the 8 CISSP domains -->
+  <g stroke="rgba(165,243,252,0.4)" stroke-width="1.5" fill="none">
+    <line x1="285" y1="160" x2="180" y2="140"/>
+    <line x1="285" y1="260" x2="180" y2="290"/>
+    <line x1="515" y1="160" x2="620" y2="140"/>
+    <line x1="515" y1="260" x2="620" y2="290"/>
+  </g>
+  <g>
+    <circle cx="170" cy="140" r="9" fill="rgba(165,243,252,0.5)" stroke="#a5f3fc" stroke-width="1.5"/>
+    <circle cx="170" cy="290" r="9" fill="rgba(165,243,252,0.5)" stroke="#a5f3fc" stroke-width="1.5"/>
+    <circle cx="630" cy="140" r="9" fill="rgba(165,243,252,0.5)" stroke="#a5f3fc" stroke-width="1.5"/>
+    <circle cx="630" cy="290" r="9" fill="rgba(165,243,252,0.5)" stroke="#a5f3fc" stroke-width="1.5"/>
+  </g>
+
+  <!-- Domain tags -->
+  <rect x="580" y="205" width="120" height="24" rx="12" fill="rgba(8,145,178,0.3)" stroke="rgba(165,243,252,0.4)" stroke-width="1"/>
+  <text x="640" y="221" text-anchor="middle" font-family="system-ui" font-size="9" fill="rgba(255,255,255,0.75)">Security Architecture</text>
+
+  <rect x="100" y="205" width="130" height="24" rx="12" fill="rgba(8,145,178,0.3)" stroke="rgba(165,243,252,0.4)" stroke-width="1"/>
+  <text x="165" y="221" text-anchor="middle" font-family="system-ui" font-size="9" fill="rgba(255,255,255,0.75)">Risk &amp; Governance</text>
+
+  <!-- Title -->
+  <rect x="60" y="380" width="240" height="52" rx="10" fill="rgba(0,0,0,0.32)"/>
+  <text x="180" y="402" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="white">CISSP Certification</text>
+  <text x="180" y="420" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="rgba(255,255,255,0.75)">Certified Info. Systems Security Professional</text>
+
+  <ellipse cx="400" cy="440" rx="320" ry="18" fill="rgba(8,145,178,0.22)"/>
+</svg>

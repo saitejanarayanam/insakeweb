@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { signIn } from "next-auth/react";
 import { PageHero } from "@/components/PageHero";
+import { FormError } from "@/components/FormError";
 
 function LoginForm() {
   const router = useRouter();
@@ -52,7 +53,7 @@ function LoginForm() {
           className="mt-1 w-full rounded-lg border border-(--color-border) bg-(--background) px-3 py-2 text-sm outline-none focus:border-(--color-primary)"
         />
       </div>
-      {error && <p className="text-sm text-red-600">{error}</p>}
+      <FormError message={error} />
       <button
         type="submit"
         disabled={loading}

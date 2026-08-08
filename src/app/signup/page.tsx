@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { signIn } from "next-auth/react";
 import { PageHero } from "@/components/PageHero";
+import { FormError } from "@/components/FormError";
 
 export default function SignupPage() {
   const router = useRouter();
@@ -77,7 +78,7 @@ export default function SignupPage() {
             />
             <p className="mt-1 text-xs text-(--color-muted)">At least 8 characters.</p>
           </div>
-          {error && <p className="text-sm text-red-600">{error}</p>}
+          <FormError message={error} />
           <button
             type="submit"
             disabled={loading}

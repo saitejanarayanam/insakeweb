@@ -1,4 +1,5 @@
 import type { BlogPost, Course } from "@/generated/prisma/client";
+import { SubmitButton } from "@/components/admin/SubmitButton";
 
 export function PostForm({
   post,
@@ -51,6 +52,9 @@ export function PostForm({
           defaultValue={post?.coverImage ?? ""}
           className="mt-1 w-full rounded-lg border border-(--color-border) bg-(--background) px-3 py-2 text-sm outline-none focus:border-(--color-primary)"
         />
+        <p className="mt-1 text-xs text-(--color-muted)">
+          Optional. Paste a direct link to an image, or leave blank to show no cover image.
+        </p>
       </div>
 
       <div>
@@ -85,42 +89,47 @@ export function PostForm({
         </div>
       </div>
 
-      <div className="grid gap-4 sm:grid-cols-2">
-        <div>
-          <label className="text-sm font-medium">Related course</label>
-          <select
-            name="courseId"
-            defaultValue={post?.courseId ?? ""}
-            className="mt-1 w-full rounded-lg border border-(--color-border) bg-(--background) px-3 py-2 text-sm outline-none focus:border-(--color-primary)"
-          >
-            <option value="">—</option>
-            {courses.map((c) => (
-              <option key={c.id} value={c.id}>
-                {c.title}
-              </option>
-            ))}
-          </select>
-        </div>
-        <div className="flex items-center gap-2 pt-6">
-          <input
-            id="published"
-            name="published"
-            type="checkbox"
-            defaultChecked={post?.published ?? true}
-            className="h-4 w-4"
-          />
-          <label htmlFor="published" className="text-sm font-medium">
-            Published
-          </label>
-        </div>
+      <div>
+        <label className="text-sm font-medium">Related course</label>
+        <select
+          name="courseId"
+          defaultValue={post?.courseId ?? ""}
+          className="mt-1 w-full rounded-lg border border-(--color-border) bg-(--background) px-3 py-2 text-sm outline-none focus:border-(--color-primary)"
+        >
+          <option value="">—</option>
+          {courses.map((c) => (
+            <option key={c.id} value={c.id}>
+              {c.title}
+            </option>
+          ))}
+        </select>
+        <p className="mt-1 text-xs text-(--color-muted)">
+          Shown as an &ldquo;Enroll now&rdquo; box at the end of the post.
+        </p>
       </div>
 
-      <button
-        type="submit"
-        className="rounded-full bg-(--color-primary) px-6 py-3 text-sm font-semibold text-white hover:bg-(--color-primary-dark)"
+      <label
+        htmlFor="published"
+        className="flex cursor-pointer items-center justify-between rounded-lg border border-(--color-border) px-4 py-3"
       >
+        <span>
+          <span className="text-sm font-medium">Published</span>
+          <span className="mt-0.5 block text-xs text-(--color-muted)">
+            Live on the public blog. Uncheck to save as a draft.
+          </span>
+        </span>
+        <input
+          id="published"
+          name="published"
+          type="checkbox"
+          defaultChecked={post?.published ?? true}
+          className="h-5 w-5 shrink-0 accent-(--color-primary)"
+        />
+      </label>
+
+      <SubmitButton className="rounded-full bg-(--color-primary) px-6 py-3 text-sm font-semibold text-white hover:bg-(--color-primary-dark)">
         {post ? "Save changes" : "Create post"}
-      </button>
+      </SubmitButton>
     </form>
   );
 }

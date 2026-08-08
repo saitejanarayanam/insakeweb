@@ -23,7 +23,7 @@ export async function createPost(formData: FormData) {
   await prisma.blogPost.create({ data });
   revalidatePath("/admin/blog");
   revalidatePath("/blog");
-  redirect("/admin/blog");
+  redirect("/admin/blog?saved=1");
 }
 
 export async function updatePost(id: string, formData: FormData) {
@@ -32,7 +32,7 @@ export async function updatePost(id: string, formData: FormData) {
   revalidatePath("/admin/blog");
   revalidatePath("/blog");
   revalidatePath(`/blog/${data.slug}`);
-  redirect("/admin/blog");
+  redirect("/admin/blog?saved=1");
 }
 
 export async function deletePost(id: string) {

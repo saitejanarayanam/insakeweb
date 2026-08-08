@@ -1,6 +1,7 @@
 import { prisma } from "@/lib/prisma";
 import { deleteContactMessage, markContactMessageRead } from "./actions";
 import { AdminSearchBox } from "@/components/admin/AdminSearchBox";
+import { ConfirmDeleteButton } from "@/components/admin/ConfirmDeleteButton";
 
 export default async function AdminContactPage() {
   const messages = await prisma.contactMessage.findMany({ orderBy: { createdAt: "desc" } });
@@ -44,9 +45,10 @@ export default async function AdminContactPage() {
                   </form>
                 )}
                 <form action={deleteContactMessage.bind(null, m.id)}>
-                  <button type="submit" className="text-red-500 hover:underline">
-                    Delete
-                  </button>
+                  <ConfirmDeleteButton
+                    confirmMessage={`Delete this message from ${m.name}? This can't be undone.`}
+                    className="text-red-500 hover:underline"
+                  />
                 </form>
               </div>
             </div>

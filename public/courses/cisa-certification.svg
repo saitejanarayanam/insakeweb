@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#134e4a"/>
+      <stop offset="100%" style="stop-color:#0d9488"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:rgba(255,255,255,0.14)"/>
+      <stop offset="100%" style="stop-color:rgba(255,255,255,0.04)"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  </pattern>
+  <rect width="800" height="450" fill="url(#grid)"/>
+
+  <!-- Audit ledger card -->
+  <rect x="90" y="100" width="230" height="260" rx="14" fill="url(#card)" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+  <rect x="112" y="126" width="120" height="10" rx="5" fill="rgba(255,255,255,0.35)"/>
+  <rect x="112" y="152" width="186" height="1" fill="rgba(255,255,255,0.15)"/>
+
+  <!-- Checklist rows with checkmarks -->
+  <g font-family="system-ui" font-size="0">
+    <circle cx="122" cy="178" r="9" fill="rgba(45,212,191,0.35)" stroke="#5eead4" stroke-width="1.5"/>
+    <polyline points="118,178 121,182 128,174" fill="none" stroke="#ccfbf1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="140" y="173" width="140" height="8" rx="4" fill="rgba(255,255,255,0.2)"/>
+
+    <circle cx="122" cy="206" r="9" fill="rgba(45,212,191,0.35)" stroke="#5eead4" stroke-width="1.5"/>
+    <polyline points="118,206 121,210 128,202" fill="none" stroke="#ccfbf1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="140" y="201" width="110" height="8" rx="4" fill="rgba(255,255,255,0.2)"/>
+
+    <circle cx="122" cy="234" r="9" fill="rgba(251,191,36,0.3)" stroke="#fbbf24" stroke-width="1.5"/>
+    <rect x="140" y="229" width="150" height="8" rx="4" fill="rgba(255,255,255,0.2)"/>
+
+    <circle cx="122" cy="262" r="9" fill="rgba(45,212,191,0.35)" stroke="#5eead4" stroke-width="1.5"/>
+    <polyline points="118,262 121,266 128,258" fill="none" stroke="#ccfbf1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="140" y="257" width="125" height="8" rx="4" fill="rgba(255,255,255,0.2)"/>
+
+    <circle cx="122" cy="290" r="9" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
+    <rect x="140" y="285" width="95" height="8" rx="4" fill="rgba(255,255,255,0.15)"/>
+  </g>
+
+  <!-- Magnifying glass over the ledger, audit-in-progress -->
+  <circle cx="470" cy="215" r="95" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="3"/>
+  <circle cx="470" cy="215" r="84" fill="rgba(0,0,0,0.28)"/>
+  <rect x="415" y="180" width="110" height="9" rx="4" fill="#5eead4"/>
+  <rect x="415" y="200" width="90" height="8" rx="4" fill="rgba(255,255,255,0.5)"/>
+  <rect x="415" y="218" width="100" height="8" rx="4" fill="rgba(255,255,255,0.5)"/>
+  <circle cx="500" cy="248" r="14" fill="rgba(45,212,191,0.4)" stroke="#5eead4" stroke-width="1.5"/>
+  <polyline points="493,248 498,253 508,241" fill="none" stroke="#ccfbf1" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="537" y1="282" x2="595" y2="340" stroke="rgba(255,255,255,0.65)" stroke-width="15" stroke-linecap="round"/>
+
+  <!-- Compliance seal, right -->
+  <circle cx="655" cy="150" r="52" fill="rgba(45,212,191,0.18)" stroke="rgba(94,234,212,0.5)" stroke-width="2"/>
+  <polyline points="632,150 648,166 682,130" fill="none" stroke="#ccfbf1" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Title -->
+  <rect x="60" y="375" width="230" height="52" rx="10" fill="rgba(0,0,0,0.32)"/>
+  <text x="175" y="397" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="white">CISA Certification</text>
+  <text x="175" y="415" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="rgba(255,255,255,0.75)">Certified Information Systems Auditor</text>
+
+  <ellipse cx="400" cy="440" rx="320" ry="18" fill="rgba(13,148,136,0.18)"/>
+</svg>

@@ -10,6 +10,7 @@ export async function createPartner(formData: FormData) {
   });
   revalidatePath("/admin/partners");
   revalidatePath("/");
+  redirect("/admin/partners?saved=1");
 }
 
 export async function updatePartner(id: string, formData: FormData) {
@@ -19,7 +20,7 @@ export async function updatePartner(id: string, formData: FormData) {
   });
   revalidatePath("/admin/partners");
   revalidatePath("/");
-  redirect("/admin/partners");
+  redirect("/admin/partners?saved=1");
 }
 
 export async function deletePartner(id: string) {

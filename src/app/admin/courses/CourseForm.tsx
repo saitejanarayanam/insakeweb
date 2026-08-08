@@ -1,4 +1,5 @@
 import type { Course, CourseCategory, Mentor } from "@/generated/prisma/client";
+import { SubmitButton } from "@/components/admin/SubmitButton";
 
 export function CourseForm({
   course,
@@ -173,12 +174,9 @@ export function CourseForm({
         </div>
       </div>
 
-      <button
-        type="submit"
-        className="rounded-full bg-(--color-primary) px-6 py-3 text-sm font-semibold text-white hover:bg-(--color-primary-dark)"
-      >
+      <SubmitButton className="rounded-full bg-(--color-primary) px-6 py-3 text-sm font-semibold text-white hover:bg-(--color-primary-dark)">
         {course ? "Save changes" : "Create course"}
-      </button>
+      </SubmitButton>
     </form>
   );
 }

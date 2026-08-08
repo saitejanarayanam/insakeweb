@@ -36,12 +36,12 @@ const TESTIMONIALS = [
 ];
 
 const COURSES = [
-  { slug: "cisa-certification", title: "CISA Certification", category: "it-audit", tagline: "Certified Information Systems Auditor", price: 2499900, hours: 40, difficulty: "Advanced", image: "/courses/cisa-certification.png" },
-  { slug: "pmp-certification", title: "PMP Certification", category: "project-management", tagline: "Project Management Professional", price: 2999900, hours: 35, difficulty: "Intermediate", image: "/courses/pmp-certification.png" },
-  { slug: "cism-certification", title: "CISM Certification", category: "security-management", tagline: "Certified Information Security Manager", price: 2699900, hours: 40, difficulty: "Advanced", image: "/courses/cism-certification.png" },
-  { slug: "crisc-certification", title: "CRISC Certification", category: "risk-management", tagline: "Risk and Information Systems Control", price: 2599900, hours: 28, difficulty: "Advanced", image: "/courses/crisc-certification.png" },
-  { slug: "cissp-certification", title: "CISSP Certification", category: "security-management", tagline: "Certified Information Systems Security Professional", price: 3199900, hours: 45, difficulty: "Advanced", image: "/courses/cissp-certification.png" },
-  { slug: "cgeit-certification", title: "CGEIT Certification", category: "risk-management", tagline: "Governance of Enterprise IT", price: 2599900, hours: 32, difficulty: "Advanced", image: "/courses/cgeit-certification.png" },
+  { slug: "cisa-certification", title: "CISA Certification", category: "it-audit", tagline: "Certified Information Systems Auditor", price: 2499900, hours: 40, difficulty: "Advanced", image: "/courses/cisa-certification.svg" },
+  { slug: "pmp-certification", title: "PMP Certification", category: "project-management", tagline: "Project Management Professional", price: 2999900, hours: 35, difficulty: "Intermediate", image: "/courses/pmp-certification.svg" },
+  { slug: "cism-certification", title: "CISM Certification", category: "security-management", tagline: "Certified Information Security Manager", price: 2699900, hours: 40, difficulty: "Advanced", image: "/courses/cism-certification.svg" },
+  { slug: "crisc-certification", title: "CRISC Certification", category: "risk-management", tagline: "Risk and Information Systems Control", price: 2599900, hours: 28, difficulty: "Advanced", image: "/courses/crisc-certification.svg" },
+  { slug: "cissp-certification", title: "CISSP Certification", category: "security-management", tagline: "Certified Information Systems Security Professional", price: 3199900, hours: 45, difficulty: "Advanced", image: "/courses/cissp-certification.svg" },
+  { slug: "cgeit-certification", title: "CGEIT Certification", category: "risk-management", tagline: "Governance of Enterprise IT", price: 2599900, hours: 32, difficulty: "Advanced", image: "/courses/cgeit-certification.svg" },
   { slug: "cfe-certification", title: "CFE Certification", category: "fraud-examination", tagline: "Certified Fraud Examiner", price: 2399900, hours: 35, difficulty: "Intermediate", image: "/courses/cfe-certification.svg" },
   { slug: "cpmai-certification", title: "CPMAI Certification", category: "ai-project-management", tagline: "AI Project Management", price: 2299900, hours: 25, difficulty: "Intermediate", image: "/courses/cpmai-certification.svg" },
   { slug: "equity-research-training", title: "Equity Research Training", category: "finance", tagline: "Build institutional-grade research reports", price: 1799900, hours: 20, difficulty: "Beginner", image: "/courses/equity-research-training.svg" },

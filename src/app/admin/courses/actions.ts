@@ -27,7 +27,7 @@ export async function createCourse(formData: FormData) {
   await prisma.course.create({ data });
   revalidatePath("/admin/courses");
   revalidatePath("/courses");
-  redirect("/admin/courses");
+  redirect("/admin/courses?saved=1");
 }
 
 export async function updateCourse(id: string, formData: FormData) {
@@ -36,7 +36,7 @@ export async function updateCourse(id: string, formData: FormData) {
   revalidatePath("/admin/courses");
   revalidatePath("/courses");
   revalidatePath(`/courses/${data.slug}`);
-  redirect("/admin/courses");
+  redirect("/admin/courses?saved=1");
 }
 
 export async function deleteCourse(id: string) {

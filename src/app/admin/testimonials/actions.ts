@@ -14,6 +14,7 @@ export async function createTestimonial(formData: FormData) {
   });
   revalidatePath("/admin/testimonials");
   revalidatePath("/");
+  redirect("/admin/testimonials?saved=1");
 }
 
 export async function updateTestimonial(id: string, formData: FormData) {
@@ -27,7 +28,7 @@ export async function updateTestimonial(id: string, formData: FormData) {
   });
   revalidatePath("/admin/testimonials");
   revalidatePath("/");
-  redirect("/admin/testimonials");
+  redirect("/admin/testimonials?saved=1");
 }
 
 export async function deleteTestimonial(id: string) {

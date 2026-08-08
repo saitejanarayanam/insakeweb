@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useCartStore } from "@/lib/cart-store";
 import { formatINR } from "@/lib/format";
@@ -17,6 +18,18 @@ export default function CartPage() {
       <div className="mx-auto max-w-3xl px-4 py-12">
         {items.length === 0 ? (
           <div className="rounded-2xl border border-(--color-border) p-10 text-center">
+            <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-(--color-surface) text-(--color-muted)">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <circle cx="9" cy="21" r="1" strokeWidth="2" />
+                <circle cx="20" cy="21" r="1" strokeWidth="2" />
+                <path
+                  d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
+            </div>
             <p className="text-(--color-muted)">Your cart is empty.</p>
             <Link
               href="/courses"
@@ -31,17 +44,24 @@ export default function CartPage() {
               {items.map((item) => (
                 <div
                   key={item.courseId}
-                  className="flex items-center justify-between rounded-2xl border border-(--color-border) p-4"
+                  className="flex items-center justify-between gap-4 rounded-2xl border border-(--color-border) p-4"
                 >
-                  <div>
-                    <Link href={`/courses/${item.slug}`} className="font-medium hover:text-(--color-primary)">
-                      {item.title}
-                    </Link>
-                    <div className="text-sm text-(--color-muted)">{formatINR(item.price)}</div>
+                  <div className="flex min-w-0 items-center gap-4">
+                    <div className="relative h-14 w-20 shrink-0 overflow-hidden rounded-lg bg-(--color-surface)">
+                      {item.imageUrl && (
+                        <Image src={item.imageUrl} alt={item.title} fill className="object-cover" />
+                      )}
+                    </div>
+                    <div className="min-w-0">
+                      <Link href={`/courses/${item.slug}`} className="font-medium hover:text-(--color-primary)">
+                        {item.title}
+                      </Link>
+                      <div className="text-sm text-(--color-muted)">{formatINR(item.price)}</div>
+                    </div>
                   </div>
                   <button
                     onClick={() => removeItem(item.courseId)}
-                    className="text-sm font-medium text-(--color-muted) hover:text-red-500"
+                    className="shrink-0 text-sm font-medium text-(--color-muted) hover:text-red-500"
                   >
                     Remove
                   </button>

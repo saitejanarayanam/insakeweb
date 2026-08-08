@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#14532d"/>
+      <stop offset="100%" style="stop-color:#16a34a"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:rgba(255,255,255,0.14)"/>
+      <stop offset="100%" style="stop-color:rgba(255,255,255,0.04)"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+  </pattern>
+  <rect width="800" height="450" fill="url(#grid)"/>
+
+  <!-- Kanban board -->
+  <g>
+    <rect x="70" y="100" width="150" height="250" rx="10" fill="url(#card)" stroke="rgba(255,255,255,0.16)" stroke-width="1"/>
+    <rect x="86" y="118" width="60" height="16" rx="8" fill="rgba(255,255,255,0.25)"/>
+    <rect x="86" y="146" width="118" height="46" rx="6" fill="rgba(255,255,255,0.1)"/>
+    <rect x="86" y="200" width="118" height="46" rx="6" fill="rgba(255,255,255,0.1)"/>
+    <rect x="86" y="254" width="118" height="46" rx="6" fill="rgba(255,255,255,0.1)"/>
+
+    <rect x="245" y="100" width="150" height="250" rx="10" fill="url(#card)" stroke="rgba(255,255,255,0.16)" stroke-width="1"/>
+    <rect x="261" y="118" width="60" height="16" rx="8" fill="rgba(74,222,128,0.4)"/>
+    <rect x="261" y="146" width="118" height="46" rx="6" fill="rgba(74,222,128,0.18)" stroke="rgba(134,239,172,0.3)" stroke-width="1"/>
+    <rect x="261" y="200" width="118" height="46" rx="6" fill="rgba(255,255,255,0.1)"/>
+
+    <rect x="420" y="100" width="150" height="250" rx="10" fill="url(#card)" stroke="rgba(255,255,255,0.16)" stroke-width="1"/>
+    <rect x="436" y="118" width="70" height="16" rx="8" fill="rgba(134,239,172,0.5)"/>
+    <circle cx="446" cy="160" r="9" fill="rgba(134,239,172,0.5)" stroke="#bbf7d0" stroke-width="1.5"/>
+    <polyline points="442,160 445,163 451,156" fill="none" stroke="#f0fdf4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="464" y="155" width="90" height="8" rx="4" fill="rgba(255,255,255,0.25)"/>
+    <circle cx="446" cy="190" r="9" fill="rgba(134,239,172,0.5)" stroke="#bbf7d0" stroke-width="1.5"/>
+    <polyline points="442,190 445,193 451,186" fill="none" stroke="#f0fdf4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="464" y="185" width="70" height="8" rx="4" fill="rgba(255,255,255,0.25)"/>
+  </g>
+
+  <!-- Gantt / timeline strip -->
+  <rect x="600" y="130" width="140" height="14" rx="7" fill="rgba(134,239,172,0.35)"/>
+  <rect x="600" y="160" width="95" height="14" rx="7" fill="rgba(134,239,172,0.5)"/>
+  <rect x="620" y="190" width="120" height="14" rx="7" fill="rgba(134,239,172,0.3)"/>
+  <rect x="600" y="220" width="70" height="14" rx="7" fill="rgba(255,255,255,0.2)"/>
+
+  <!-- Progress ring -->
+  <circle cx="665" cy="310" r="42" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="10"/>
+  <circle cx="665" cy="310" r="42" fill="none" stroke="#4ade80" stroke-width="10" stroke-dasharray="205 264" stroke-linecap="round" transform="rotate(-90 665 310)"/>
+  <text x="665" y="316" text-anchor="middle" font-family="system-ui" font-size="16" font-weight="700" fill="white">78%</text>
+
+  <!-- Title -->
+  <rect x="60" y="375" width="220" height="52" rx="10" fill="rgba(0,0,0,0.32)"/>
+  <text x="170" y="397" text-anchor="middle" font-family="system-ui,sans-serif" font-size="14" font-weight="700" fill="white">PMP Certification</text>
+  <text x="170" y="415" text-anchor="middle" font-family="system-ui,sans-serif" font-size="10" fill="rgba(255,255,255,0.75)">Project Management Professional</text>
+
+  <ellipse cx="400" cy="440" rx="320" ry="18" fill="rgba(22,163,74,0.2)"/>
+</svg>
